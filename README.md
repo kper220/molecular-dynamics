@@ -11,7 +11,7 @@ Records progress made.
 
 | Week | Summary |
 | -- | -- |
-| 1 | N/A |
+| 6/7 - 6/9 | Read Matthews Ch 6, 7. |
 
 ## References
 - Leimkuhler and Matthews. *Molecular Dynamics with Deterministic and Stochastic Methods*.
