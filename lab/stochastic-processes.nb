@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     26727,        691]
-NotebookOptionsPosition[     24466,        646]
-NotebookOutlinePosition[     24859,        663]
-CellTagsIndexPosition[     24816,        660]
+NotebookDataLength[     21415,        519]
+NotebookOptionsPosition[     19382,        478]
+NotebookOutlinePosition[     19775,        495]
+CellTagsIndexPosition[     19732,        492]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -473,174 +473,6 @@ Cell[BoxData[
    3.768890186848351*^9}},
  CellLabel->
   "In[675]:=",ExpressionUUID->"be706e4e-e114-45e3-9099-f1f21262b102"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Stochastic differential equations", "Subsection",
- CellChangeTimes->{{3.768903069464982*^9, 
-  3.768903073861741*^9}},ExpressionUUID->"d2d290ac-4335-493b-a8f7-\
-44436901ccb8"],
-
-Cell[TextData[{
- "An ordinary differential equation ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{
-     StyleBox["dx",
-      FontSlant->"Italic"], "(", "t", ")"}], "=", 
-    RowBox[{
-     RowBox[{"f", "(", 
-      RowBox[{"t", ",", "x"}], ")"}], 
-     StyleBox["dt",
-      FontSlant->"Italic"]}]}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "f886e604-5b31-4eab-a29f-4b5b6190bb6b"],
- " with initial conditions ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{"x", "(", "0", ")"}], "=", 
-    SubscriptBox["x", "0"]}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "db5203bf-ae66-4456-990c-745ce6007419"],
- " has integral form ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{"x", "(", "t", ")"}], "=", 
-    RowBox[{
-     SubscriptBox["x", "0"], "+", 
-     RowBox[{"\[Integral]", 
-      RowBox[{
-       RowBox[{"f", "(", 
-        RowBox[{"s", ",", 
-         RowBox[{"x", "(", "s", ")"}]}], ")"}], 
-       StyleBox["ds",
-        FontSlant->"Italic"]}]}]}]}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "071d5c71-36eb-4576-8d1b-4dec793bbb9a"],
- ", where ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{"x", "(", 
-    RowBox[{"t", ",", 
-     SubscriptBox["x", "0"], ",", 
-     SubscriptBox["t", "0"]}], ")"}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "09f85820-25fd-4a88-8601-6c11a21fb843"],
- " is the solution with initial conditions ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{"x", "(", 
-     SubscriptBox["t", "0"], ")"}], "=", 
-    SubscriptBox["x", "0"]}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "5a5d655b-261a-4e47-9db2-b31a0ce0ab41"],
- ". An example ODE is ",
- Cell[BoxData[
-  FormBox[
-   StyleBox[
-    RowBox[{
-     RowBox[{"dx", "(", "t", ")"}], "=", 
-     RowBox[{
-      RowBox[{"a", "(", "t", ")"}], 
-      RowBox[{"x", "(", "t", ")"}], "dt"}]}],
-    FontSlant->"Italic"], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "d348ba04-3472-46ee-967d-9ee71d92c56a"],
- ". This system is separable. A stochastic differential equation (SDE) \
-assumes that ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{"a", "(", "t", ")"}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "b83d049d-bbb4-49e2-854d-2dd06dc19347"],
- " is not deterministic but stochastic, so that ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{"a", "(", "t", ")"}], "=", 
-    RowBox[{
-     RowBox[{"f", "(", "t", ")"}], "+", 
-     RowBox[{"\[Xi]", "(", "t", ")"}]}]}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "62261894-11e5-40f3-8795-0a6fde185adf"],
- ", and ",
- Cell[BoxData[
-  FormBox[
-   StyleBox[
-    RowBox[{
-     RowBox[{"dx", "(", "t", ")"}], "=", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"f", "(", "t", ")"}], 
-       RowBox[{"x", "(", "t", ")"}], "dt"}], "+", 
-      RowBox[{
-       RowBox[{"\[Xi]", "(", "t", ")"}], 
-       RowBox[{"x", "(", "t", ")"}], "dt"}]}]}],
-    FontSlant->"Italic"], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "51521dba-40dc-45af-ada3-bd57d9f4ba6a"],
- ", where ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{"\[Xi]", "(", "t", ")"}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "bc651713-2b9b-4da1-b1dc-cd5cec3fc266"],
- " is a white noise process. Let ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    StyleBox[
-     RowBox[{"dW", "(", "t", ")"}],
-     FontSlant->"Italic"], 
-    StyleBox["=",
-     FontSlant->"Italic"], 
-    StyleBox[
-     RowBox[{
-      RowBox[{"\[Xi]", "(", "t", ")"}], "dt"}],
-     FontSlant->"Plain"]}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "9c96e73e-f608-419a-a341-59b632446848"],
- ", then ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    RowBox[{
-     StyleBox["dx",
-      FontSlant->"Italic"], "(", "t", ")"}], "=", 
-    RowBox[{
-     RowBox[{
-      RowBox[{"f", "(", "t", ")"}], 
-      RowBox[{"x", "(", "t", ")"}], 
-      StyleBox["dt",
-       FontSlant->"Italic"]}], "+", 
-     RowBox[{
-      RowBox[{"x", "(", "t", ")"}], 
-      RowBox[{
-       StyleBox["dW",
-        FontSlant->"Italic"], "(", "t", ")"}]}]}]}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "6ae8bf41-ffb9-49ac-b48e-288eccd9d553"],
- ". ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{
-    StyleBox["dW",
-     FontSlant->"Italic"], "(", "t", ")"}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "aea04fda-3d8a-4ddf-aeae-5ad4119df740"],
- " denotes the differential form of the Brownian motion."
-}], "Text",
- CellChangeTimes->{{3.7689030822626677`*^9, 3.768903085794232*^9}, {
-  3.768903324136064*^9, 3.7689033360112762`*^9}, {3.768903382613524*^9, 
-  3.768903394034388*^9}, {3.768903481119898*^9, 3.7689035198022013`*^9}, {
-  3.768903575353051*^9, 
-  3.768903980310521*^9}},ExpressionUUID->"2c7ac15c-4361-413b-b565-\
-85f94d0c9890"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -664,19 +496,19 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 163, 3, 98, "Title",ExpressionUUID->"6dadf825-d394-4999-8401-fe999602de8d"],
-Cell[746, 27, 425, 8, 35, "Text",ExpressionUUID->"89eba377-ef42-426f-ae60-8335f9043978"],
+Cell[746, 27, 425, 8, 58, "Text",ExpressionUUID->"89eba377-ef42-426f-ae60-8335f9043978"],
 Cell[1174, 37, 324, 6, 30, "Input",ExpressionUUID->"73615c64-6a27-4cba-8f66-35853732b841"],
 Cell[1501, 45, 379, 11, 35, "Text",ExpressionUUID->"1777402f-84cb-4a93-b300-8576ba5b1738"],
 Cell[1883, 58, 281, 7, 30, "Input",ExpressionUUID->"b242c744-ae28-4f4d-9211-0e7e3c02e12d"],
 Cell[CellGroupData[{
 Cell[2189, 69, 172, 3, 45, "Subsubsection",ExpressionUUID->"299c67a6-02d9-4166-b3a4-1396742416cf"],
-Cell[2364, 74, 713, 20, 35, "Text",ExpressionUUID->"472084f8-b089-4752-9053-ecbea180d924"],
+Cell[2364, 74, 713, 20, 58, "Text",ExpressionUUID->"472084f8-b089-4752-9053-ecbea180d924"],
 Cell[3080, 96, 1649, 42, 250, "Input",ExpressionUUID->"3f3bfb40-2ff5-4a7e-9db4-fc3955fd8cdc"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[4766, 143, 237, 4, 45, "Subsubsection",ExpressionUUID->"5dac5c58-a2d2-462b-a17f-936d677db1d5"],
-Cell[5006, 149, 336, 7, 35, "Text",ExpressionUUID->"b2bbfa8e-dc3e-4cb9-a49e-9e6c54974caa"],
-Cell[5345, 158, 8394, 183, 850, "Input",ExpressionUUID->"68442e56-8dc1-4209-a661-e8af711e2474"]
+Cell[5006, 149, 336, 7, 58, "Text",ExpressionUUID->"b2bbfa8e-dc3e-4cb9-a49e-9e6c54974caa"],
+Cell[5345, 158, 8394, 183, 955, "Input",ExpressionUUID->"68442e56-8dc1-4209-a661-e8af711e2474"]
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[13776, 346, 178, 3, 45, "Subsubsection",ExpressionUUID->"a5ff42e8-fd47-4a16-9815-566120aec21b"],
@@ -685,12 +517,8 @@ Cell[14300, 361, 943, 18, 30, "Input",ExpressionUUID->"695b4deb-b8f5-4e16-b242-4
 }, Open  ]],
 Cell[CellGroupData[{
 Cell[15280, 384, 179, 3, 45, "Subsubsection",ExpressionUUID->"09bec72d-a90c-4146-864d-90a2f49df123"],
-Cell[15462, 389, 408, 8, 35, "Text",ExpressionUUID->"d3f24670-1349-4523-b12f-1eea723ea633"],
-Cell[15873, 399, 3481, 75, 367, "Input",ExpressionUUID->"be706e4e-e114-45e3-9099-f1f21262b102"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[19391, 479, 181, 3, 54, "Subsection",ExpressionUUID->"d2d290ac-4335-493b-a8f7-44436901ccb8"],
-Cell[19575, 484, 4863, 158, 83, "Text",ExpressionUUID->"2c7ac15c-4361-413b-b565-85f94d0c9890"]
+Cell[15462, 389, 408, 8, 81, "Text",ExpressionUUID->"d3f24670-1349-4523-b12f-1eea723ea633"],
+Cell[15873, 399, 3481, 75, 409, "Input",ExpressionUUID->"be706e4e-e114-45e3-9099-f1f21262b102"]
 }, Open  ]]
 }, Open  ]]
 }
