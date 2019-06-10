@@ -17,4 +17,12 @@ Records progress made.
 ## References
 - Leimkuhler and Matthews. *Molecular Dynamics with Deterministic and Stochastic Methods*.
 
+### Supplementary resources
+The resources I mention in this subsection are not directly related to molecular dynamics: however, they are helpful in supplementing the mathematical background one should understand, when reading the textbook proper.
 
+- Legendre transformations
+    - [Legendre transformation explained (with animation)](https://www.youtube.com/watch?v=vgLq90cOI_M)
+- Lagrangian mechanics
+    - [Lagrangian mechanics playlist](https://www.youtube.com/watch?v=4uJaKJASKnY&list=PLX2gX-ftPVXWK0GOFDi7FcmIMMhY_7fU9)
+- Variational derivatives
+    - [Functionals and the functional derivative](https://cds.cern.ch/record/1383342/files/978-3-642-14090-7_BookBackMatter.pdf)
