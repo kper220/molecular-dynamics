@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     32112,        725]
-NotebookOptionsPosition[     29754,        679]
-NotebookOutlinePosition[     30147,        696]
-CellTagsIndexPosition[     30104,        693]
+NotebookDataLength[     34455,        784]
+NotebookOptionsPosition[     31720,        734]
+NotebookOutlinePosition[     32113,        751]
+CellTagsIndexPosition[     32070,        748]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -41,7 +41,7 @@ Cell[BoxData[
   3.768885479271455*^9, 3.768885488901699*^9}, {3.7688855449766703`*^9, 
   3.768885554190487*^9}, {3.768969455560072*^9, 3.7689694562271442`*^9}},
  CellLabel->
-  "In[688]:=",ExpressionUUID->"73615c64-6a27-4cba-8f66-35853732b841"],
+  "In[711]:=",ExpressionUUID->"73615c64-6a27-4cba-8f66-35853732b841"],
 
 Cell[TextData[{
  "Generate a pseudorandom real number between 0 and ",
@@ -117,7 +117,7 @@ Cell[BoxData[
       RowBox[{"Mean", "[", 
        RowBox[{"{", 
         RowBox[{"yMin", ",", "yMax"}], "}"}], "]"}]}], ";", 
-     "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", "\[IndentingNewLine]", 
      RowBox[{"Which", "[", "\[IndentingNewLine]", 
       RowBox[{
        RowBox[{"dx", "\[GreaterEqual]", "dy"}], ",", "\[IndentingNewLine]", 
@@ -144,23 +144,23 @@ Cell[BoxData[
    3.768865144842936*^9}, {3.768865184329933*^9, 3.768865255058387*^9}, 
    3.768865301798729*^9, 3.768865428348721*^9, {3.768967253185701*^9, 
    3.768967255066104*^9}, {3.769318401431822*^9, 3.7693185328671007`*^9}, {
-   3.7693186055377007`*^9, 3.769318718583899*^9}},
+   3.7693186055377007`*^9, 3.769318718583899*^9}, 3.769342376284914*^9},
  CellLabel->
-  "In[638]:=",ExpressionUUID->"3f3bfb40-2ff5-4a7e-9db4-fc3955fd8cdc"]
+  "In[689]:=",ExpressionUUID->"3f3bfb40-2ff5-4a7e-9db4-fc3955fd8cdc"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
-Cell["Direction algorithm", "Subsubsection",
- CellChangeTimes->{{3.7689673639837713`*^9, 
-  3.76896736593793*^9}},ExpressionUUID->"947a81f6-f870-448d-8d3b-\
+Cell["Walk functions", "Subsubsection",
+ CellChangeTimes->{{3.7689673639837713`*^9, 3.76896736593793*^9}, {
+  3.7693424153167553`*^9, 3.769342418960743*^9}, {3.769342452006518*^9, 
+  3.7693424523769712`*^9}},ExpressionUUID->"947a81f6-f870-448d-8d3b-\
 c62d20797e8e"],
 
-Cell["\<\
-Define a direction function, which returns the direction of our random walk.\
-\>", "Text",
- CellChangeTimes->{{3.768967368860537*^9, 
-  3.7689673898109703`*^9}},ExpressionUUID->"539caa89-596d-4ab7-b334-\
+Cell["Here, we define a few ways a random walk could be generated.", "Text",
+ CellChangeTimes->{{3.768967368860537*^9, 3.7689673898109703`*^9}, {
+  3.7693424214255257`*^9, 
+  3.769342432216103*^9}},ExpressionUUID->"539caa89-596d-4ab7-b334-\
 dc4b45cf4f38"],
 
 Cell[BoxData[{
@@ -255,7 +255,7 @@ Cell[BoxData[{
    3.769317571530664*^9, 3.769317573097056*^9}, {3.769319516819674*^9, 
    3.769319518189253*^9}},
  CellLabel->
-  "In[639]:=",ExpressionUUID->"eb81b7d8-ff8b-4526-bf5e-4aef9a80eb4f"]
+  "In[696]:=",ExpressionUUID->"eb81b7d8-ff8b-4526-bf5e-4aef9a80eb4f"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -268,11 +268,12 @@ Cell["Random walk", "Subsubsection",
 
 Cell["\<\
 We create a random walk function which takes in initial conditions, number of \
-time-steps, and a fixed distance traveled per time-step.\
+time-steps, and a fixed distance traveled per time-step governed by the walk \
+functions before.\
 \>", "Text",
  CellChangeTimes->{{3.768858518799343*^9, 3.7688585908461933`*^9}, {
-  3.768865896194957*^9, 
-  3.76886589711156*^9}},ExpressionUUID->"b2bbfa8e-dc3e-4cb9-a49e-\
+  3.768865896194957*^9, 3.76886589711156*^9}, {3.7693424400609922`*^9, 
+  3.769342463363222*^9}},ExpressionUUID->"b2bbfa8e-dc3e-4cb9-a49e-\
 9e6c54974caa"],
 
 Cell[BoxData[
@@ -495,7 +496,7 @@ Cell[BoxData[
    3.769315635341978*^9}, {3.769317481662846*^9, 3.769317482380039*^9}, 
    3.769318134006295*^9, {3.769318251287561*^9, 3.769318358141233*^9}},
  CellLabel->
-  "In[642]:=",ExpressionUUID->"68442e56-8dc1-4209-a661-e8af711e2474"]
+  "In[691]:=",ExpressionUUID->"68442e56-8dc1-4209-a661-e8af711e2474"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -506,13 +507,14 @@ Cell["Experiments with RandomWalk", "Subsubsection",
 566120aec21b"],
 
 Cell[TextData[{
- "Running ",
- StyleBox["RandomWalk", "Input"],
- " from the origin with 10,000 time-steps and step-distance 1."
+ "A random walk of 10,000 steps, using ",
+ StyleBox["randomPolar", "Input"],
+ "."
 }], "Text",
  CellChangeTimes->{{3.7688630435749187`*^9, 3.76886305566616*^9}, 
-   3.768863410013948*^9, {3.7688653545287533`*^9, 
-   3.768865392669945*^9}},ExpressionUUID->"b5213324-5f97-40c7-b01f-\
+   3.768863410013948*^9, {3.7688653545287533`*^9, 3.768865392669945*^9}, {
+   3.769342469028277*^9, 
+   3.769342520451892*^9}},ExpressionUUID->"b5213324-5f97-40c7-b01f-\
 44c07d0e5010"],
 
 Cell[BoxData[
@@ -521,11 +523,7 @@ Cell[BoxData[
    RowBox[{"{", 
     RowBox[{
      RowBox[{"{", "0", "}"}], ",", 
-     RowBox[{"{", "0", "}"}]}], "}"}], ",", "10000", ",", "1", ",", 
-   RowBox[{"WalkSpace", "\[Rule]", 
-    RowBox[{"(", 
-     RowBox[{
-      RowBox[{"randomGridGeneral", "[", "12", "]"}], "&"}], ")"}]}]}], 
+     RowBox[{"{", "0", "}"}]}], "}"}], ",", "10000", ",", "1"}], 
   "]"}]], "Input",
  CellChangeTimes->{{3.768861830488883*^9, 3.768861844265649*^9}, {
    3.768861919334491*^9, 3.768861953479106*^9}, 3.7688619851343317`*^9, {
@@ -557,9 +555,66 @@ Cell[BoxData[
    3.769317976512246*^9, 3.7693179957307053`*^9}, {3.769318139587132*^9, 
    3.7693181866246853`*^9}, {3.769318747612453*^9, 3.769318778192177*^9}, {
    3.769319522852923*^9, 3.769319557732955*^9}, {3.769331536473145*^9, 
-   3.769331609533647*^9}},
+   3.769331609533647*^9}, {3.769342537872219*^9, 3.7693425400061417`*^9}, {
+   3.769342575804126*^9, 3.769342593866975*^9}},
  CellLabel->
-  "In[652]:=",ExpressionUUID->"695b4deb-b8f5-4e16-b242-4654d954e687"]
+  "In[700]:=",ExpressionUUID->"695b4deb-b8f5-4e16-b242-4654d954e687"],
+
+Cell[TextData[{
+ "A random walk of 10,000 steps, using ",
+ StyleBox["randomGrid", "Input"],
+ " orientations."
+}], "Text",
+ CellChangeTimes->{{3.769342602945559*^9, 3.76934262572815*^9}, {
+  3.769342945756475*^9, 
+  3.769342953989971*^9}},ExpressionUUID->"16732037-0bf6-482e-a809-\
+ada51e93e142"],
+
+Cell[BoxData[
+ RowBox[{"RandomWalk", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "0", "}"}], ",", 
+     RowBox[{"{", "0", "}"}]}], "}"}], ",", "10000", ",", "1", ",", 
+   RowBox[{"WalkSpace", "\[Rule]", "randomGrid"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.769342635172962*^9, 3.769342640983395*^9}},
+ CellLabel->
+  "In[701]:=",ExpressionUUID->"14897f09-95f6-49b7-9aff-b5da9295d582"],
+
+Cell[TextData[{
+ "A random walk of 10,000 steps, in which the possible walk orientations are ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     FractionBox[
+      RowBox[{"2", "\[Pi]"}], "3"], ",", 
+     FractionBox[
+      RowBox[{"4", "\[Pi]"}], "3"]}], "}"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f2df3e4c-f20a-4560-ae0c-58778f4b45c5"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.769342655678445*^9, 
+  3.769342718682376*^9}},ExpressionUUID->"9752a6ee-a3c3-48f5-9ec5-\
+1f588bccffab"],
+
+Cell[BoxData[
+ RowBox[{"RandomWalk", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "0", "}"}], ",", 
+     RowBox[{"{", "0", "}"}]}], "}"}], ",", "10000", ",", "1", ",", 
+   RowBox[{"WalkSpace", "\[Rule]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"randomGridGeneral", "[", "3", "]"}], "&"}], ")"}]}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.769342721382276*^9, 3.7693427432008677`*^9}},
+ CellLabel->
+  "In[703]:=",ExpressionUUID->"a3a8e8ba-a3be-47e6-85ed-695750e6cdf8"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -571,12 +626,13 @@ Cell["Density of a random walk", "Subsubsection",
 
 Cell["\<\
 Perhaps we are less concerned about the path, and more about the points \
-traversed by many walks. What does the point distribution look like for 1000 \
-walks?\
+traversed by many walks. What does the point distribution look like for \
+10,000 walks?\
 \>", "Text",
  CellChangeTimes->{{3.7688867600133123`*^9, 3.768886816805114*^9}, {
   3.7688888333194532`*^9, 3.768888853123785*^9}, {3.768888960642447*^9, 
-  3.768888990040436*^9}},ExpressionUUID->"d3f24670-1349-4523-b12f-\
+  3.768888990040436*^9}, {3.7693428594563704`*^9, 
+  3.769342860477417*^9}},ExpressionUUID->"d3f24670-1349-4523-b12f-\
 1eea723ea633"],
 
 Cell[BoxData[
@@ -591,11 +647,9 @@ Cell[BoxData[
          RowBox[{"{", 
           RowBox[{
            RowBox[{"{", "0", "}"}], ",", 
-           RowBox[{"{", "0", "}"}]}], "}"}], ",", "3", ",", "1", ",", 
-         RowBox[{"plot", "\[Rule]", "False"}], ",", 
-         RowBox[{"WalkSpace", "\[Rule]", 
-          RowBox[{"(", "randomPolar", ")"}]}]}], "]"}], "&"}], "/@", 
-      RowBox[{"Range", "[", "1000", "]"}]}]}], "}"}], ",", 
+           RowBox[{"{", "0", "}"}]}], "}"}], ",", "10", ",", "1", ",", 
+         RowBox[{"plot", "\[Rule]", "False"}]}], "]"}], "&"}], "/@", 
+      RowBox[{"Range", "[", "10000", "]"}]}]}], "}"}], ",", 
    "\[IndentingNewLine]", 
    RowBox[{
     RowBox[{
@@ -627,7 +681,6 @@ Cell[BoxData[
       RowBox[{"solutions", ",", "\[IndentingNewLine]", 
        RowBox[{"AspectRatio", "\[Rule]", "1"}], ",", "\[IndentingNewLine]", 
        RowBox[{"ImageSize", "\[Rule]", "1024"}], ",", "\[IndentingNewLine]", 
-       RowBox[{"Joined", "\[Rule]", "True"}], ",", "\[IndentingNewLine]", 
        RowBox[{"PlotRange", "\[Rule]", 
         RowBox[{"{", 
          RowBox[{
@@ -639,7 +692,7 @@ Cell[BoxData[
        RowBox[{"PlotStyle", "\[Rule]", 
         RowBox[{"{", 
          RowBox[{
-          RowBox[{"Opacity", "[", ".6", "]"}], ",", "Gray"}], "}"}]}]}], 
+          RowBox[{"Opacity", "[", ".5", "]"}], ",", "Gray"}], "}"}]}]}], 
       "\[IndentingNewLine]", "]"}], "]"}]}]}], "]"}]], "Input",
  CellChangeTimes->{{3.768886681368635*^9, 3.768886737685253*^9}, {
    3.768886819466414*^9, 3.768887018148119*^9}, {3.768887054282193*^9, 
@@ -671,9 +724,11 @@ Cell[BoxData[
    3.7693318092813463`*^9, 3.7693318122099857`*^9}, {3.769332062636093*^9, 
    3.769332100386063*^9}, {3.76933214090206*^9, 3.769332314164662*^9}, {
    3.769332422014943*^9, 3.769332439909411*^9}, {3.769332746184306*^9, 
-   3.769332747555094*^9}, {3.769333290664176*^9, 3.769333313124176*^9}},
+   3.769332747555094*^9}, {3.769333290664176*^9, 3.769333313124176*^9}, {
+   3.769342769928391*^9, 3.7693427850441017`*^9}, {3.769342816428705*^9, 
+   3.769342848907125*^9}},
  CellLabel->
-  "In[687]:=",ExpressionUUID->"be706e4e-e114-45e3-9099-f1f21262b102"]
+  "In[710]:=",ExpressionUUID->"be706e4e-e114-45e3-9099-f1f21262b102"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -704,27 +759,31 @@ Cell[1931, 58, 281, 7, 30, "Input",ExpressionUUID->"b242c744-ae28-4f4d-9211-0e7e
 Cell[CellGroupData[{
 Cell[2237, 69, 227, 4, 45, "Subsubsection",ExpressionUUID->"299c67a6-02d9-4166-b3a4-1396742416cf"],
 Cell[2467, 75, 739, 19, 35, "Text",ExpressionUUID->"472084f8-b089-4752-9053-ecbea180d924"],
-Cell[3209, 96, 2177, 52, 314, "Input",ExpressionUUID->"3f3bfb40-2ff5-4a7e-9db4-fc3955fd8cdc"]
+Cell[3209, 96, 2222, 52, 335, "Input",ExpressionUUID->"3f3bfb40-2ff5-4a7e-9db4-fc3955fd8cdc"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5423, 153, 171, 3, 45, "Subsubsection",ExpressionUUID->"947a81f6-f870-448d-8d3b-c62d20797e8e"],
-Cell[5597, 158, 228, 5, 35, "Text",ExpressionUUID->"539caa89-596d-4ab7-b334-dc4b45cf4f38"],
-Cell[5828, 165, 3965, 92, 90, "Input",ExpressionUUID->"eb81b7d8-ff8b-4526-bf5e-4aef9a80eb4f"]
+Cell[5468, 153, 265, 4, 45, "Subsubsection",ExpressionUUID->"947a81f6-f870-448d-8d3b-c62d20797e8e"],
+Cell[5736, 159, 255, 4, 35, "Text",ExpressionUUID->"539caa89-596d-4ab7-b334-dc4b45cf4f38"],
+Cell[5994, 165, 3965, 92, 90, "Input",ExpressionUUID->"eb81b7d8-ff8b-4526-bf5e-4aef9a80eb4f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9830, 262, 237, 4, 45, "Subsubsection",ExpressionUUID->"5dac5c58-a2d2-462b-a17f-936d677db1d5"],
-Cell[10070, 268, 336, 7, 35, "Text",ExpressionUUID->"b2bbfa8e-dc3e-4cb9-a49e-9e6c54974caa"],
-Cell[10409, 277, 10578, 220, 955, "Input",ExpressionUUID->"68442e56-8dc1-4209-a661-e8af711e2474"]
+Cell[9996, 262, 237, 4, 45, "Subsubsection",ExpressionUUID->"5dac5c58-a2d2-462b-a17f-936d677db1d5"],
+Cell[10236, 268, 424, 8, 35, "Text",ExpressionUUID->"b2bbfa8e-dc3e-4cb9-a49e-9e6c54974caa"],
+Cell[10663, 278, 10578, 220, 955, "Input",ExpressionUUID->"68442e56-8dc1-4209-a661-e8af711e2474"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[21024, 502, 178, 3, 45, "Subsubsection",ExpressionUUID->"a5ff42e8-fd47-4a16-9815-566120aec21b"],
-Cell[21205, 507, 340, 8, 35, "Text",ExpressionUUID->"b5213324-5f97-40c7-b01f-44c07d0e5010"],
-Cell[21548, 517, 2671, 44, 30, "Input",ExpressionUUID->"695b4deb-b8f5-4e16-b242-4654d954e687"]
+Cell[21278, 503, 178, 3, 45, "Subsubsection",ExpressionUUID->"a5ff42e8-fd47-4a16-9815-566120aec21b"],
+Cell[21459, 508, 361, 9, 35, "Text",ExpressionUUID->"b5213324-5f97-40c7-b01f-44c07d0e5010"],
+Cell[21823, 519, 2626, 41, 30, "Input",ExpressionUUID->"695b4deb-b8f5-4e16-b242-4654d954e687"],
+Cell[24452, 562, 295, 8, 35, "Text",ExpressionUUID->"16732037-0bf6-482e-a809-ada51e93e142"],
+Cell[24750, 572, 407, 10, 30, "Input",ExpressionUUID->"14897f09-95f6-49b7-9aff-b5da9295d582"],
+Cell[25160, 584, 538, 16, 39, "Text",ExpressionUUID->"9752a6ee-a3c3-48f5-9ec5-1f588bccffab"],
+Cell[25701, 602, 497, 14, 30, "Input",ExpressionUUID->"a3a8e8ba-a3be-47e6-85ed-695750e6cdf8"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[24256, 566, 179, 3, 45, "Subsubsection",ExpressionUUID->"09bec72d-a90c-4146-864d-90a2f49df123"],
-Cell[24438, 571, 408, 8, 35, "Text",ExpressionUUID->"d3f24670-1349-4523-b12f-1eea723ea633"],
-Cell[24849, 581, 4877, 94, 388, "Input",ExpressionUUID->"be706e4e-e114-45e3-9099-f1f21262b102"]
+Cell[26235, 621, 179, 3, 45, "Subsubsection",ExpressionUUID->"09bec72d-a90c-4146-864d-90a2f49df123"],
+Cell[26417, 626, 461, 9, 35, "Text",ExpressionUUID->"d3f24670-1349-4523-b12f-1eea723ea633"],
+Cell[26881, 637, 4811, 93, 367, "Input",ExpressionUUID->"be706e4e-e114-45e3-9099-f1f21262b102"]
 }, Open  ]]
 }, Open  ]]
 }
