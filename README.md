@@ -10,8 +10,6 @@
 Records progress made.
 
 ### Deadline (Jun 12)
-Assignments to be completed by June 12.
-
 - Exercise: Derive the equations of motion from the simple N-body system using the Lennard-Jones potential.
 - Flow map: Matthews 1.5.1, and intuitive description.
 - Legendre transform: intuitive description. What are the limitations of Legendre transform?
