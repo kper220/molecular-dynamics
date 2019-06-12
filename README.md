@@ -9,6 +9,14 @@
 ## Tracker
 Records progress made.
 
+### Deadline (Jun 12)
+Assignments to be completed by June 12.
+
+- Exercise: Derive the equations of motion from the simple N-body system using the Lennard-Jones potential.
+- Flow map: Matthews 1.5.1, and intuitive description.
+- Legendre transform: intuitive description. What are the limitations of Legendre transform?
+- Functional derivatives: exercises, and intuitive description.
+
 | Week | Summary |
 | -- | -- |
 | 6/10 - 6/16 | |
@@ -26,3 +34,4 @@ The resources I mention in this subsection are not directly related to molecular
     - [Lagrangian mechanics playlist](https://www.youtube.com/watch?v=4uJaKJASKnY&list=PLX2gX-ftPVXWK0GOFDi7FcmIMMhY_7fU9)
 - Variational derivatives
     - [Functionals and the functional derivative](https://cds.cern.ch/record/1383342/files/978-3-642-14090-7_BookBackMatter.pdf)
+    - [Functional differentiation](http://www.physics.usu.edu/Wheeler/QFT2016/Notes/QFT09FunctionalDerivatives.pdf)
