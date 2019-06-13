@@ -27,3 +27,5 @@ The resources I mention in this subsection are not directly related to molecular
 - Variational derivatives
     - [Functionals and the functional derivative](https://cds.cern.ch/record/1383342/files/978-3-642-14090-7_BookBackMatter.pdf)
     - [Functional differentiation](http://www.physics.usu.edu/Wheeler/QFT2016/Notes/QFT09FunctionalDerivatives.pdf)
+- Stochastic differential equations (SDEs)
+    - [Brownian motion (Wiener processes)](https://www.youtube.com/watch?v=BVYVeaPojY4)
