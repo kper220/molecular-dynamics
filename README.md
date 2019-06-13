@@ -7,7 +7,7 @@
 - [References](#references)
 
 ## Tracker
-Records progress made.
+Measures learning performance qualitatively on a weekly basis, in which the learnt material is germane to molecular dynamics or its subfields.
 
 | Week | Summary |
 | -- | -- |
