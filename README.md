@@ -7,7 +7,6 @@
 - [References](#references)
 
 ## Tracker
-Measures learning performance qualitatively on a weekly basis, in which the learnt material is germane to molecular dynamics or its subfields.
 
 | Week | Summary |
 | -- | -- |
@@ -18,7 +17,6 @@ Measures learning performance qualitatively on a weekly basis, in which the lear
 - Leimkuhler and Matthews. *Molecular Dynamics with Deterministic and Stochastic Methods*.
 
 ### Supplementary resources
-The resources I mention in this subsection are not directly related to molecular dynamics: however, they are helpful in supplementing the mathematical background one should understand, when reading the textbook proper.
 
 - Legendre transformations
     - [Legendre transformation explained (with animation)](https://www.youtube.com/watch?v=vgLq90cOI_M)
