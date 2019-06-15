@@ -18,6 +18,8 @@
 
 ### Supplementary resources
 
+- Variational Calculus: Faculty of Khan is recommended for general review of mathematical and physical concepts.
+    - [Calculus of variations playlist by Khan](https://www.youtube.com/playlist?list=PLdgVBOaXkb9CD8igcUr9Fmn5WXLpE8ZE_)
 - Legendre transformations
     - [Legendre transformation explained (with animation)](https://www.youtube.com/watch?v=vgLq90cOI_M)
 - Lagrangian mechanics
