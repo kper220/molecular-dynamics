@@ -16,8 +16,8 @@
 ## Labs
 
 ### Lab 1
-- Document: [lab-1.pdf](lab/lab-1.pdf)
-- File: [lab-1.nb](lab/lab-1.nb) 
+Document: [lab-1.pdf](lab/lab-1.pdf)<br>
+File: [lab-1.nb](lab/lab-1.nb) 
 
 - Random walks
     - Random walk functions with different random walk behaviors
