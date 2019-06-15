@@ -15,17 +15,9 @@
 
 ## Labs
 
-### Lab 1
-Document: [lab-1.pdf](lab/lab-1.pdf)<br>
-File: [lab-1.nb](lab/lab-1.nb) 
-
-- Random walks
-    - Random walk functions with different random walk behaviors
-    - Statistical behavior of random walks
-- Stochastic differential equations
-    - Modeled simple stock growth
-    - Fixed points, attractors, repellers
-    - Random walks with the Ito process
+| No. | Links | Summary |
+| -- | -- | -- |
+| 1 | [lab-1.pdf](lab/lab-1.pdf)<br>[lab-1.nb](lab/lab-1.nb) | **Random walks.** Random walk functions with different random walk behaviors. Qualitative statistical properties of random walks.<br>**Stochastic differential equations.** Simple growth stock models, fixed points, attractors, repellers, random walks with the Ito process. |
 
 ## References
 - Leimkuhler and Matthews. *Molecular Dynamics with Deterministic and Stochastic Methods*.
