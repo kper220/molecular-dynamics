@@ -4,6 +4,7 @@
 
 ## Table of Contents
 - [Tracker](#tracker)
+- [Labs](#labs)
 - [References](#references)
 
 ## Tracker
