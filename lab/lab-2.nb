@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     16962,        439]
-NotebookOptionsPosition[     14195,        393]
-NotebookOutlinePosition[     14531,        408]
-CellTagsIndexPosition[     14488,        405]
+NotebookDataLength[      8360,        231]
+NotebookOptionsPosition[      6978,        203]
+NotebookOutlinePosition[      7314,        218]
+CellTagsIndexPosition[      7271,        215]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -29,7 +29,8 @@ f75c9fe62e92"],
 Cell[BoxData[
  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
  CellChangeTimes->{{3.769735731557255*^9, 3.7697357361495047`*^9}},
- CellLabel->"In[36]:=",ExpressionUUID->"35b3a5e6-42a0-41ab-b0bc-844f8a01926f"],
+ CellLabel->
+  "In[118]:=",ExpressionUUID->"35b3a5e6-42a0-41ab-b0bc-844f8a01926f"],
 
 Cell[CellGroupData[{
 
@@ -87,7 +88,8 @@ Cell[BoxData[{
   3.7697365102390423`*^9}, {3.7697365599778337`*^9, 3.769736561233211*^9}, {
   3.769736608012732*^9, 3.769736611102621*^9}, {3.7697372452012043`*^9, 
   3.7697372812944803`*^9}, {3.769739362716329*^9, 3.769739363592243*^9}},
- CellLabel->"In[2]:=",ExpressionUUID->"767e3d0e-ea84-43f5-85b4-6e8ff8720641"],
+ CellLabel->
+  "In[104]:=",ExpressionUUID->"767e3d0e-ea84-43f5-85b4-6e8ff8720641"],
 
 Cell[BoxData[
  RowBox[{
@@ -104,7 +106,8 @@ Cell[BoxData[
       RowBox[{"i", ",", "1", ",", "k"}], "}"}]}], "]"}]}]}]], "Input",
  CellChangeTimes->{{3.769735970691394*^9, 3.769736026311006*^9}, {
   3.769736443579596*^9, 3.769736444229227*^9}},
- CellLabel->"In[4]:=",ExpressionUUID->"1c45c489-6940-43eb-9a32-3a5b200d62ff"],
+ CellLabel->
+  "In[106]:=",ExpressionUUID->"1c45c489-6940-43eb-9a32-3a5b200d62ff"],
 
 Cell[BoxData[
  RowBox[{"Plot", "[", 
@@ -122,7 +125,8 @@ Cell[BoxData[
   3.769736506015675*^9}, {3.769737216027631*^9, 3.769737222951784*^9}, {
   3.769739345720386*^9, 3.769739347139326*^9}, {3.769739443528469*^9, 
   3.76973944428564*^9}},
- CellLabel->"In[5]:=",ExpressionUUID->"08d926c6-1b55-49a6-9caf-17ce3b3f6eb3"],
+ CellLabel->
+  "In[107]:=",ExpressionUUID->"08d926c6-1b55-49a6-9caf-17ce3b3f6eb3"],
 
 Cell[TextData[{
  "We confirm that this function does decay when away from ",
@@ -152,7 +156,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.7697362482924623`*^9, 3.769736254571089*^9}, {
   3.769736348383617*^9, 3.7697363503837357`*^9}, {3.7697372295013037`*^9, 
   3.7697372336675177`*^9}, {3.769739351565263*^9, 3.769739352713379*^9}},
- CellLabel->"In[6]:=",ExpressionUUID->"726fdcfc-d714-45c5-b8b2-fcb48ca2919e"],
+ CellLabel->
+  "In[108]:=",ExpressionUUID->"726fdcfc-d714-45c5-b8b2-fcb48ca2919e"],
 
 Cell["Fluctuations occur as expected.", "Text",
  CellChangeTimes->{{3.769736258833509*^9, 
@@ -173,7 +178,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.769736288548917*^9, 3.769736301142706*^9}, {
   3.769736491790963*^9, 3.7697364968236227`*^9}, {3.769737237098971*^9, 
   3.769737240663382*^9}, {3.769739355055051*^9, 3.769739355714979*^9}},
- CellLabel->"In[7]:=",ExpressionUUID->"d613eaba-e15c-434f-8579-e2ac46b192ca"],
+ CellLabel->
+  "In[109]:=",ExpressionUUID->"d613eaba-e15c-434f-8579-e2ac46b192ca"],
 
 Cell[TextData[{
  "Converges to the ",
@@ -192,202 +198,6 @@ Cell[TextData[{
  CellChangeTimes->{{3.769742070909416*^9, 
   3.7697420928757257`*^9}},ExpressionUUID->"456e2373-7b78-4dec-90d5-\
 f0e8f6ff976e"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell["Simple N-body system", "Subsubsection",
- CellChangeTimes->{{3.76974150444215*^9, 3.769741506760776*^9}, {
-  3.7697415972162533`*^9, 
-  3.769741603606646*^9}},ExpressionUUID->"c1cc8fcc-00ce-4646-9edf-\
-44440ee1b8db"],
-
-Cell["\<\
-Before beginning any complicated numerical simulation, I would like to first \
-compute a simple physical system using the equations of motion.
-Define a Lennard-Jones potential function and its derivative. We will only be \
-working in the simplified Lennard-Jones system with unit masses, so arbitrary \
-constants like \[Epsilon] and \[Sigma] are ignored.\
-\>", "Text",
- CellChangeTimes->{{3.7697415139968243`*^9, 3.7697415392966843`*^9}, {
-  3.769741652647862*^9, 3.7697416575024776`*^9}, {3.7697417090148687`*^9, 
-  3.769741716804677*^9}, {3.769742989929738*^9, 3.769743019078307*^9}, {
-  3.7697447180042458`*^9, 
-  3.769744720190072*^9}},ExpressionUUID->"78ad1688-0267-4ad3-b536-\
-82b3122aac59"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"LennardJonesPotential", "[", "r_", "]"}], ":=", 
-  RowBox[{"4", 
-   RowBox[{"(", 
-    RowBox[{
-     SuperscriptBox["r", 
-      RowBox[{"-", "12"}]], "-", 
-     SuperscriptBox["r", 
-      RowBox[{"-", "6"}]]}], ")"}]}]}]], "Input",
- CellChangeTimes->{{3.769741776105412*^9, 3.769741974311283*^9}, {
-  3.769742950775814*^9, 3.769742958321389*^9}},
- CellLabel->"In[8]:=",ExpressionUUID->"c1f2644d-0578-4263-b67e-20aa9592d357"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"DLennardJonesPotential", "[", "r_", "]"}], ":=", 
-  RowBox[{
-   RowBox[{"D", "[", 
-    RowBox[{
-     RowBox[{"LennardJonesPotential", "[", "s", "]"}], ",", "s"}], "]"}], "/.", 
-   RowBox[{"s", "\[Rule]", "r"}]}]}]], "Input",
- CellChangeTimes->{{3.769743280739567*^9, 3.76974329095427*^9}, {
-  3.76974614399819*^9, 3.769746148033505*^9}},
- CellLabel->"In[9]:=",ExpressionUUID->"e608679d-fbc0-4236-9002-64d566b4dd7c"],
-
-Cell[TextData[{
- "Since we defined the Lennard-Jones potential, it is also necessary to \
-define the distance function. Given two position-states ",
- Cell[BoxData[
-  FormBox[
-   SubscriptBox["q", "i"], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "73b6eaf7-450f-4365-8720-fe5eec7e4aea"],
- " and ",
- Cell[BoxData[
-  FormBox[
-   SubscriptBox["q", "j"], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "4eaacbbb-9860-46c0-be0a-fc0ce7515df7"],
- ", the distance is simply"
-}], "Text",
- CellChangeTimes->{{3.7697447228279457`*^9, 
-  3.769744788621359*^9}},ExpressionUUID->"eca80016-4548-4620-91a4-\
-e2d569d326ea"],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"distance", "[", 
-   RowBox[{"qi_", ",", "qj_"}], "]"}], ":=", 
-  RowBox[{"Norm", "[", 
-   RowBox[{"qj", "-", "qi"}], "]"}]}]], "Input",
- CellChangeTimes->{{3.7697447541655293`*^9, 3.7697447990337677`*^9}},
- CellLabel->"In[10]:=",ExpressionUUID->"608f8fa0-ad2f-468d-9dba-1c6a0de5916d"],
-
-Cell[TextData[{
- "For example, the distance from ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{"(", 
-    RowBox[{"1", ",", "1"}], ")"}], TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "baf2d374-6db6-4868-85b7-cb857fdee04b"],
- " to the origin is"
-}], "Text",
- CellChangeTimes->{{3.7697448358960447`*^9, 
-  3.769744852265725*^9}},ExpressionUUID->"c3c2afb2-c5f8-470a-8fc8-\
-904403e3e5ac"],
-
-Cell[BoxData[
- RowBox[{"distance", "[", 
-  RowBox[{
-   RowBox[{"{", 
-    RowBox[{"0", ",", "0"}], "}"}], ",", 
-   RowBox[{"{", 
-    RowBox[{"1", ",", "1"}], "}"}]}], "]"}]], "Input",
- CellChangeTimes->{{3.769744853309291*^9, 3.769744858080201*^9}, {
-  3.769745829310227*^9, 3.769745834593296*^9}},
- CellLabel->"In[11]:=",ExpressionUUID->"40ee317e-8b44-4247-a21a-47ad04b27f82"],
-
-Cell[TextData[{
- "Define an initial state function with argument ",
- Cell[BoxData[
-  FormBox["N", TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "c6a8dbcb-dd1d-497c-92a1-b128aabcc6c9"],
- ", which generates random initial position and velocity states for ",
- Cell[BoxData[
-  FormBox["N", TraditionalForm]],
-  FormatType->"TraditionalForm",ExpressionUUID->
-  "8514fee6-89b2-4412-8627-690121232e5e"],
- " particles in 3-space. Confine position-state and velocity-state entries to \
-a unit cube. Returns a list of particle-states."
-}], "Text",
- CellChangeTimes->{{3.769742475027849*^9, 3.769742556011156*^9}, {
-  3.769742713064823*^9, 
-  3.769742748425956*^9}},ExpressionUUID->"74fbf778-7192-4210-9b76-\
-6c440e0dc5ef"],
-
-Cell[CellGroupData[{
-
-Cell[TextData[{
- StyleBox["InitialStates", "Input"],
- " returns a list of particle-states. Each particle-state is a list with two \
-elements. The first element is the position-state. The second-element is a \
-velocity-state. Both the position-state and the velocity-state have two \
-elements, denoting the contributions in the ",
- Cell[BoxData[
-  FormBox[
-   RowBox[{"x", ",", "y", ",", "z"}], TraditionalForm]],ExpressionUUID->
-  "5647f99b-c285-46cd-aecf-62fecd9fad33"],
- "-coordinates, respectively."
-}], "Item",
- CellChangeTimes->{{3.769742736045246*^9, 3.76974281378053*^9}, {
-  3.769743396662243*^9, 3.76974342031327*^9}, {3.769743559783173*^9, 
-  3.769743563655992*^9}},ExpressionUUID->"b293d1be-87e7-4cf7-b8bd-\
-8d53961a31d8"],
-
-Cell["\<\
-For simplicity and economic computation time, we will set the dimensions of \
-our particles to 2.\
-\>", "Item",
- CellChangeTimes->{{3.769742736045246*^9, 3.76974281378053*^9}, {
-  3.769743396662243*^9, 3.76974342031327*^9}, {3.769743560116776*^9, 
-  3.769743561936596*^9}, {3.769743605375044*^9, 
-  3.769743645205572*^9}},ExpressionUUID->"2d1dd0b0-fe75-4e4d-ae51-\
-8d20996d2182"]
-}, Open  ]],
-
-Cell[BoxData[
- RowBox[{
-  RowBox[{"InitialStates", "[", 
-   RowBox[{"n_", ",", 
-    RowBox[{"OptionsPattern", "[", 
-     RowBox[{"{", 
-      RowBox[{"dimension", "\[Rule]", "2"}], "}"}], "]"}]}], "]"}], ":=", 
-  RowBox[{
-   RowBox[{
-    RowBox[{"(", 
-     RowBox[{
-      RowBox[{
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{
-          RowBox[{"RandomReal", "[", 
-           RowBox[{"{", 
-            RowBox[{"0", ",", "100"}], "}"}], "]"}], "&"}], "/@", 
-         RowBox[{"Range", "[", 
-          RowBox[{"OptionValue", "[", "dimension", "]"}], "]"}]}], ")"}], 
-       "&"}], "/@", 
-      RowBox[{"Range", "[", "2", "]"}]}], ")"}], "&"}], "/@", 
-   RowBox[{"Range", "[", "n", "]"}]}]}]], "Input",
- CellChangeTimes->{{3.7697425591305037`*^9, 3.7697426151551943`*^9}, {
-  3.76974264861518*^9, 3.7697427232028933`*^9}, {3.769743555926722*^9, 
-  3.76974358908605*^9}, {3.7697458407312307`*^9, 3.76974584084437*^9}, {
-  3.769745964158408*^9, 3.769745994762063*^9}, {3.7697463929669857`*^9, 
-  3.76974643136937*^9}, {3.769746518611581*^9, 3.769746520817664*^9}},
- CellLabel->"In[12]:=",ExpressionUUID->"d4bf4d42-54a5-447a-bcfa-9cfd44dfb329"],
-
-Cell[BoxData[
- RowBox[{"InitialStates", "[", "2", "]"}]], "Input",
- CellChangeTimes->{{3.769746407027049*^9, 3.76974640979004*^9}},
- CellLabel->"In[13]:=",ExpressionUUID->"f512a5de-cef6-48fe-8a99-9f1257a60d06"],
-
-Cell["\<\
-The right side of the simplified LJ system is still nasty, so let\
-\[CloseCurlyQuote]s treat it separately. Luckily, if we have the set of \
-position-states, we can solve the right side.\
-\>", "Text",
- CellChangeTimes->{{3.76974541047968*^9, 
-  3.769745513922022*^9}},ExpressionUUID->"10585050-e193-4905-86b9-\
-c511f2597904"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -409,36 +219,18 @@ CellTagsIndex->{}
 Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 200, 4, 98, "Title",ExpressionUUID->"20fc6403-9b33-40e5-a6b3-f75c9fe62e92"],
-Cell[783, 28, 223, 3, 30, "Input",ExpressionUUID->"35b3a5e6-42a0-41ab-b0bc-844f8a01926f"],
+Cell[783, 28, 227, 4, 30, "Input",ExpressionUUID->"35b3a5e6-42a0-41ab-b0bc-844f8a01926f"],
 Cell[CellGroupData[{
-Cell[1031, 35, 204, 3, 45, "Subsubsection",ExpressionUUID->"d47244cf-21dd-4d56-abdf-6c995cad0b34"],
-Cell[1238, 40, 1234, 30, 85, "Text",ExpressionUUID->"8c041bd7-3927-42dd-a1ad-b6d5c987b800"],
-Cell[2475, 72, 805, 17, 52, "Input",ExpressionUUID->"767e3d0e-ea84-43f5-85b4-6e8ff8720641"],
-Cell[3283, 91, 555, 15, 47, "Input",ExpressionUUID->"1c45c489-6940-43eb-9a32-3a5b200d62ff"],
-Cell[3841, 108, 701, 16, 30, "Input",ExpressionUUID->"08d926c6-1b55-49a6-9caf-17ce3b3f6eb3"],
-Cell[4545, 126, 436, 12, 35, "Text",ExpressionUUID->"fde8d092-59b3-43cc-a3fd-6f7faae55b33"],
-Cell[4984, 140, 610, 14, 30, "Input",ExpressionUUID->"726fdcfc-d714-45c5-b8b2-fcb48ca2919e"],
-Cell[5597, 156, 173, 3, 35, "Text",ExpressionUUID->"630f8682-b693-49f2-871b-b16ba1c0ae74"],
-Cell[5773, 161, 606, 14, 30, "Input",ExpressionUUID->"d613eaba-e15c-434f-8579-e2ac46b192ca"],
-Cell[6382, 177, 539, 16, 35, "Text",ExpressionUUID->"456e2373-7b78-4dec-90d5-f0e8f6ff976e"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[6958, 198, 221, 4, 45, "Subsubsection",ExpressionUUID->"c1cc8fcc-00ce-4646-9edf-44440ee1b8db"],
-Cell[7182, 204, 707, 12, 81, "Text",ExpressionUUID->"78ad1688-0267-4ad3-b536-82b3122aac59"],
-Cell[7892, 218, 458, 12, 33, "Input",ExpressionUUID->"c1f2644d-0578-4263-b67e-20aa9592d357"],
-Cell[8353, 232, 450, 10, 30, "Input",ExpressionUUID->"e608679d-fbc0-4236-9002-64d566b4dd7c"],
-Cell[8806, 244, 654, 18, 38, "Text",ExpressionUUID->"eca80016-4548-4620-91a4-e2d569d326ea"],
-Cell[9463, 264, 319, 7, 30, "Input",ExpressionUUID->"608f8fa0-ad2f-468d-9dba-1c6a0de5916d"],
-Cell[9785, 273, 402, 12, 35, "Text",ExpressionUUID->"c3c2afb2-c5f8-470a-8fc8-904403e3e5ac"],
-Cell[10190, 287, 376, 9, 30, "Input",ExpressionUUID->"40ee317e-8b44-4247-a21a-47ad04b27f82"],
-Cell[10569, 298, 736, 17, 58, "Text",ExpressionUUID->"74fbf778-7192-4210-9b76-6c440e0dc5ef"],
-Cell[CellGroupData[{
-Cell[11330, 319, 733, 15, 53, "Item",ExpressionUUID->"b293d1be-87e7-4cf7-b8bd-8d53961a31d8"],
-Cell[12066, 336, 389, 8, 32, "Item",ExpressionUUID->"2d1dd0b0-fe75-4e4d-ae51-8d20996d2182"]
-}, Open  ]],
-Cell[12470, 347, 1146, 28, 30, "Input",ExpressionUUID->"d4bf4d42-54a5-447a-bcfa-9cfd44dfb329"],
-Cell[13619, 377, 210, 3, 30, "Input",ExpressionUUID->"f512a5de-cef6-48fe-8a99-9f1257a60d06"],
-Cell[13832, 382, 335, 7, 35, "Text",ExpressionUUID->"10585050-e193-4905-86b9-c511f2597904"]
+Cell[1035, 36, 204, 3, 45, "Subsubsection",ExpressionUUID->"d47244cf-21dd-4d56-abdf-6c995cad0b34"],
+Cell[1242, 41, 1234, 30, 85, "Text",ExpressionUUID->"8c041bd7-3927-42dd-a1ad-b6d5c987b800"],
+Cell[2479, 73, 810, 18, 52, "Input",ExpressionUUID->"767e3d0e-ea84-43f5-85b4-6e8ff8720641"],
+Cell[3292, 93, 560, 16, 47, "Input",ExpressionUUID->"1c45c489-6940-43eb-9a32-3a5b200d62ff"],
+Cell[3855, 111, 706, 17, 30, "Input",ExpressionUUID->"08d926c6-1b55-49a6-9caf-17ce3b3f6eb3"],
+Cell[4564, 130, 436, 12, 35, "Text",ExpressionUUID->"fde8d092-59b3-43cc-a3fd-6f7faae55b33"],
+Cell[5003, 144, 615, 15, 30, "Input",ExpressionUUID->"726fdcfc-d714-45c5-b8b2-fcb48ca2919e"],
+Cell[5621, 161, 173, 3, 35, "Text",ExpressionUUID->"630f8682-b693-49f2-871b-b16ba1c0ae74"],
+Cell[5797, 166, 611, 15, 30, "Input",ExpressionUUID->"d613eaba-e15c-434f-8579-e2ac46b192ca"],
+Cell[6411, 183, 539, 16, 35, "Text",ExpressionUUID->"456e2373-7b78-4dec-90d5-f0e8f6ff976e"]
 }, Open  ]]
 }, Open  ]]
 }
