@@ -1,0 +1,239 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8360,        231]
+NotebookOptionsPosition[      6978,        203]
+NotebookOutlinePosition[      7314,        218]
+CellTagsIndexPosition[      7271,        215]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Lab 2", "Title",
+ CellChangeTimes->{{3.7697366437540894`*^9, 3.769736644055792*^9}, {
+  3.76973669633241*^9, 
+  3.7697366966955853`*^9}},ExpressionUUID->"20fc6403-9b33-40e5-a6b3-\
+f75c9fe62e92"],
+
+Cell[BoxData[
+ RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.769735731557255*^9, 3.7697357361495047`*^9}},
+ CellLabel->
+  "In[118]:=",ExpressionUUID->"35b3a5e6-42a0-41ab-b0bc-844f8a01926f"],
+
+Cell[CellGroupData[{
+
+Cell["Langevin\[CloseCurlyQuote]s model for Brownian motion", "Subsubsection",
+ CellChangeTimes->{{3.769735704085599*^9, 
+  3.769735727069808*^9}},ExpressionUUID->"d47244cf-21dd-4d56-abdf-\
+6c995cad0b34"],
+
+Cell[TextData[{
+ "We assign a randomized set of parameters. First, we work with just the \
+randomized parameters ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"\[Psi]", "(", "t", ")"}], "=", 
+    RowBox[{
+     FractionBox["1", "k"], 
+     SubsuperscriptBox[
+      RowBox[{"\[CapitalSigma]", " "}], 
+      RowBox[{"i", "=", "1"}], "k"], 
+     RowBox[{"cos", "(", 
+      RowBox[{"\[CapitalOmega]", " ", "t"}], ")"}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b01a600c-64c0-46ac-8740-0d27d4e5c2c1"],
+ ", where ",
+ Cell[BoxData[
+  FormBox["k", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6ac7432c-9c74-464c-bc9d-2436dc569cbe"],
+ " is the number of random values, which we take from a standard normal \
+distribution. It is claimed by the textbook that this function will initially \
+decay, but then display rapid bounded fluctuation. We examine whether this \
+behavior is observed."
+}], "Text",
+ CellChangeTimes->{{3.7697357429382677`*^9, 3.769735786951316*^9}, {
+  3.7697360604721403`*^9, 3.769736099239387*^9}, {3.7697361684912567`*^9, 
+  3.769736225700617*^9}, {3.7697363640992203`*^9, 
+  3.769736371352704*^9}},ExpressionUUID->"8c041bd7-3927-42dd-a1ad-\
+b6d5c987b800"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"k", "=", "100"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"omegas", "=", 
+   RowBox[{
+    RowBox[{"RandomVariate", "[", 
+     RowBox[{
+      RowBox[{"NormalDistribution", "[", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", "k"}], "}"}]}], "]"}], "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.769735944255362*^9, 3.769735993495451*^9}, {
+  3.769736395742773*^9, 3.769736472897884*^9}, {3.769736509872121*^9, 
+  3.7697365102390423`*^9}, {3.7697365599778337`*^9, 3.769736561233211*^9}, {
+  3.769736608012732*^9, 3.769736611102621*^9}, {3.7697372452012043`*^9, 
+  3.7697372812944803`*^9}, {3.769739362716329*^9, 3.769739363592243*^9}},
+ CellLabel->
+  "In[104]:=",ExpressionUUID->"767e3d0e-ea84-43f5-85b4-6e8ff8720641"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"psi", "[", "t_", "]"}], ":=", 
+  RowBox[{
+   FractionBox["1", "k"], 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{"Cos", "[", 
+      RowBox[{
+       RowBox[{"omegas", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], "t"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "1", ",", "k"}], "}"}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.769735970691394*^9, 3.769736026311006*^9}, {
+  3.769736443579596*^9, 3.769736444229227*^9}},
+ CellLabel->
+  "In[106]:=",ExpressionUUID->"1c45c489-6940-43eb-9a32-3a5b200d62ff"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"psi", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"-", "4"}], ",", "4"}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", "1"}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.769736031109913*^9, 3.7697360535769463`*^9}, {
+  3.7697364336261377`*^9, 3.769736434261139*^9}, {3.769736505888156*^9, 
+  3.769736506015675*^9}, {3.769737216027631*^9, 3.769737222951784*^9}, {
+  3.769739345720386*^9, 3.769739347139326*^9}, {3.769739443528469*^9, 
+  3.76973944428564*^9}},
+ CellLabel->
+  "In[107]:=",ExpressionUUID->"08d926c6-1b55-49a6-9caf-17ce3b3f6eb3"],
+
+Cell[TextData[{
+ "We confirm that this function does decay when away from ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "=", "0"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "279cfbf1-80bb-4b5c-a785-91cd65bc8c8e"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.769736235913913*^9, 3.7697362470147123`*^9}, {
+  3.76973938115057*^9, 
+  3.7697394073217983`*^9}},ExpressionUUID->"fde8d092-59b3-43cc-a3fd-\
+6f7faae55b33"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"psi", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", "1"}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7697362482924623`*^9, 3.769736254571089*^9}, {
+  3.769736348383617*^9, 3.7697363503837357`*^9}, {3.7697372295013037`*^9, 
+  3.7697372336675177`*^9}, {3.769739351565263*^9, 3.769739352713379*^9}},
+ CellLabel->
+  "In[108]:=",ExpressionUUID->"726fdcfc-d714-45c5-b8b2-fcb48ca2919e"],
+
+Cell["Fluctuations occur as expected.", "Text",
+ CellChangeTimes->{{3.769736258833509*^9, 
+  3.769736287967753*^9}},ExpressionUUID->"630f8682-b693-49f2-871b-\
+b16ba1c0ae74"],
+
+Cell[BoxData[
+ RowBox[{"Plot", "[", 
+  RowBox[{
+   RowBox[{"psi", "[", "t", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", 
+     RowBox[{"-", "100"}], ",", "100"}], "}"}], ",", 
+   RowBox[{"PlotRange", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", "1"}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.769736288548917*^9, 3.769736301142706*^9}, {
+  3.769736491790963*^9, 3.7697364968236227`*^9}, {3.769737237098971*^9, 
+  3.769737240663382*^9}, {3.769739355055051*^9, 3.769739355714979*^9}},
+ CellLabel->
+  "In[109]:=",ExpressionUUID->"d613eaba-e15c-434f-8579-e2ac46b192ca"],
+
+Cell[TextData[{
+ "Converges to the ",
+ Cell[BoxData[
+  FormBox["\[Delta]", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f568305f-3dde-4ede-8076-8f29194e7794"],
+ " function in the limit ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"k", "\[Rule]", "\[Infinity]"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "c1d8490e-03a0-4dd0-95cb-179b634a5abb"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.769742070909416*^9, 
+  3.7697420928757257`*^9}},ExpressionUUID->"456e2373-7b78-4dec-90d5-\
+f0e8f6ff976e"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1280, 680},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 200, 4, 98, "Title",ExpressionUUID->"20fc6403-9b33-40e5-a6b3-f75c9fe62e92"],
+Cell[783, 28, 227, 4, 30, "Input",ExpressionUUID->"35b3a5e6-42a0-41ab-b0bc-844f8a01926f"],
+Cell[CellGroupData[{
+Cell[1035, 36, 204, 3, 45, "Subsubsection",ExpressionUUID->"d47244cf-21dd-4d56-abdf-6c995cad0b34"],
+Cell[1242, 41, 1234, 30, 85, "Text",ExpressionUUID->"8c041bd7-3927-42dd-a1ad-b6d5c987b800"],
+Cell[2479, 73, 810, 18, 52, "Input",ExpressionUUID->"767e3d0e-ea84-43f5-85b4-6e8ff8720641"],
+Cell[3292, 93, 560, 16, 47, "Input",ExpressionUUID->"1c45c489-6940-43eb-9a32-3a5b200d62ff"],
+Cell[3855, 111, 706, 17, 30, "Input",ExpressionUUID->"08d926c6-1b55-49a6-9caf-17ce3b3f6eb3"],
+Cell[4564, 130, 436, 12, 35, "Text",ExpressionUUID->"fde8d092-59b3-43cc-a3fd-6f7faae55b33"],
+Cell[5003, 144, 615, 15, 30, "Input",ExpressionUUID->"726fdcfc-d714-45c5-b8b2-fcb48ca2919e"],
+Cell[5621, 161, 173, 3, 35, "Text",ExpressionUUID->"630f8682-b693-49f2-871b-b16ba1c0ae74"],
+Cell[5797, 166, 611, 15, 30, "Input",ExpressionUUID->"d613eaba-e15c-434f-8579-e2ac46b192ca"],
+Cell[6411, 183, 539, 16, 35, "Text",ExpressionUUID->"456e2373-7b78-4dec-90d5-f0e8f6ff976e"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

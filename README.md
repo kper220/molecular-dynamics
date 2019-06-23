@@ -11,6 +11,7 @@
 
 | Week | Summary |
 | -- | -- |
+| 6/17 - 6/23 | *Matthews chapter 6 review, begin reading chapter 7, pg. 261 - 267.* |
 | 6/10 - 6/16 | Matthews pg. 216 - 258 (canonical distributions, stochastic differential equations), 407 - 411 (appendix: probability theory).<br>Acquired Mathematica programming tools for solving SDEs using the Ito Process, and computing the means and variances of stochastic processes. Ito process on sample SDE ([link](figures/ito-process-simulations.jpeg)). Understanding of stochastic differential equations ([link](documents/Understanding_SDEs.pdf)). |
 | 6/7 - 6/9 | Matthews pg. 1 - 7 (introduction), 18 - 28 (N-body problem, Hamiltonian, and flow maps), 44 - 46 (variational equations), 60 - 70 (Verlet method), 211 - 214 (canonical ensemble).<br>Learned about stochastic processes and stochastic differential equations, matrix calculus. Simulated a random walk algorithm.<br>Recommended: solve (without reference) the equations of motion for the simple N-body system (example 1.5). |
 
@@ -18,6 +19,7 @@
 
 | No. | Links | Summary |
 | -- | -- | -- |
+| 2 | | *Chapter 6 review. topics pending.* |
 | 1 | [pdf](lab/lab-1.pdf)<br>[nb](lab/lab-1.nb) | **Random walks.** Random walk functions with different random walk behaviors. Qualitative statistical properties of random walks.<br>**Stochastic differential equations.** Simple growth stock models, fixed points, stability, random walks with the Ito process. |
 
 ## References
