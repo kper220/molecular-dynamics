@@ -1,7 +1,6 @@
 # library for numerical approximation methods.
 
 import numpy as np
-
 # solving function.
 def solve(constructor, initial_condition, tt):
     # extract data from tt.
@@ -50,7 +49,7 @@ def euler_method_constructor(ff):
     return euler_method_stepsize
 
 # solve by RK4
-def runge_kutta_4_constructor(ff):
+def runge_kutta_constructor(ff):
     # vectorize function.
     vectorized_function = vectorize(ff)
     
