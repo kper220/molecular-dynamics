@@ -1,6 +1,7 @@
 *.log
 *.sql
 *.sqlite
+*.pyc
 
 .DS_Store
 .DS_Store?
