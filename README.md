@@ -4,13 +4,13 @@
 
 ## Table of Contents
 - [Tracker](#tracker)
-- [Labs](#labs)
 - [References](#references)
 
 ## Tracker
 
 | Week | Summary |
 | -- | -- |
+| 7/1 - 7/7 | *Chapter 7.* |
 | 6/24 - 6/30 | Matthews pg. 60 - 70 (Verlet method). |
 | 6/17 - 6/23 | Matthews pg. 211 - 258 (chapter 6 review).<br>Preview of Chapter 7. |
 | 6/10 - 6/16 | Matthews pg. 216 - 258 (canonical distributions, stochastic differential equations), 407 - 411 (appendix: probability theory).<br>Acquired Mathematica programming tools for solving SDEs using the Ito Process, and computing the means and variances of stochastic processes. Ito process on sample SDE ([link](figures/ito-process-simulations.jpeg)). Understanding of stochastic differential equations ([link](documents/Understanding_SDEs.pdf)). |
