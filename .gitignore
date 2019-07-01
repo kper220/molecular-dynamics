@@ -1,6 +1,7 @@
 *.log
 *.sql
 *.sqlite
+*.pyc
 
 .DS_Store
 .DS_Store?
@@ -10,4 +11,4 @@
 .ehthumbs.db
 Thumbs.db
 
-/.ipynb_checkpoints/*
+*/.ipynb_checkpoints/*
