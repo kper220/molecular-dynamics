@@ -1,0 +1,136 @@
+\documentclass[reqno, 11pt]{amsart}
+
+\usepackage{amsmath, amssymb, amsthm}
+
+\usepackage{enumitem}
+\usepackage{epstopdf}
+\usepackage[margin = 1in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\usepackage{graphicx}
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+
+% COMMANDS
+\newtheorem{thm}{Theorem}
+\newtheorem{exercise}{Exercise}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Exercises}
+\author{David Li}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\begin{exercise}
+Derive the Fokker-Planck operator $\mathcal{L}$ for the OU process.
+\end{exercise}
+
+The Ornstein-Uhlenbeck SDE is the equation,
+\begin{equation}
+dX = -\gamma Xdt + \sigma dW.
+\end{equation}
+The corresponding Fokker-Planck equation is,
+\begin{equation}
+\dfrac{\partial \rho}{\partial t} = \dfrac{\partial}{\partial x}(\gamma x\rho) + \dfrac{1}{2}\dfrac{\partial^2}{\partial x^2}(\sigma^2\rho).
+\end{equation}
+Therefore, the Fokker-Planck operator for the OU process is
+\begin{equation}
+\mathcal{L}^\dagger\rho = \dfrac{\partial}{\partial x}(\gamma x\rho) + \dfrac{1}{2}\dfrac{\partial^2}{\partial x^2}(\sigma^2\rho).
+\end{equation}
+
+\begin{exercise}
+Show that $[\![OABA]\!]$ and $[\![BAOAB]\!]$ are conjugates, i.e., show that
+\begin{equation}
+\Big(\mathcal{U}_h^{[\![OABA]\!]}\Big)^{n+1} = \mathcal{U}_{h/2}^A\circ\mathcal{U}_{h/2}^B\circ\Big(\mathcal{U}_h^{[\![BAOAB]\!]}\Big)^n\circ\mathcal{U}_{h/2}^B\circ\mathcal{U}_{h/2}^A\circ\mathcal{U}_h^O
+\end{equation}
+\end{exercise}
+
+It's not obvious how these two operations are conjugate pairs.
+
+\begin{exercise}
+Explain why Stochastic Position Verlet (SPV) is unsuitable for large choices of $\gamma$.
+\end{exercise}
+
+As $\gamma\to\infty$, $\eta\to0$ diminishes the force evaluation term.
+
+\begin{exercise}
+With the Hamiltonian of a one-dimensional harmonic oscillator with spring potential $U(q) = \Omega^2q^2/2$, 
+\begin{equation}
+H(q, p) = \dfrac{p^2}{2m} + \dfrac{\Omega^2q^2}{2},
+\end{equation}
+where $(q, p)\in\mathbb{R}^2$, show that $\langle q\rangle = \langle p\rangle = 0$, $\langle\Omega^2q^2\rangle = \langle p^2/m\rangle = k_BT$, and $\langle qp\rangle = 0$.
+\end{exercise}
+
+We first solve for the distribution,
+\begin{equation*}
+\rho_\beta = \dfrac{1}{Z}\exp(-\beta H),
+\end{equation*}
+where the partition function is
+\begin{equation*}
+Z = \iint d\omega\exp(-\beta H).
+\end{equation*}
+Separating integrands for $q$ and $p$ yields
+\begin{equation*}
+Z = \int_{-\infty}^\infty dq\exp(-\beta\Omega^2q^2/2)\int_{-\infty}^\infty dp\exp(-\beta p^2/2m).
+\end{equation*}
+We know
+\begin{equation}
+\int_{-\infty}^\infty dx\exp(-x^2) = \sqrt{\pi}.
+\end{equation}
+Let $x^2 = \beta\Omega^2q^2 / 2$, then $x = q\sqrt{\beta\Omega^2/2}$ and $dx = \sqrt{\beta\Omega^2/2}dq$, so that
+\begin{equation}
+\label{eq:partition function position}
+\int_{-\infty}^\infty dq\exp(-\beta\Omega^2q^2/2) = \dfrac{1}{\sqrt{\beta\Omega^2/2}}\int_{-\infty}^\infty dx\exp(-x^2) = \dfrac{1}{\Omega}\sqrt{\dfrac{2\pi}{\beta}}.
+\end{equation}
+Next, we solve for the $p$ integrand factor. Let $y^2 = \beta p^2/2m$, then $y = p\sqrt{\beta/2m}$ and $dy = dp\sqrt{\beta/2m}$. Therefore,
+\begin{equation}
+\label{eq:partition function momentum}
+\int_{-\infty}^\infty dp\exp(-\beta p^2/2m) = \sqrt{2m/\beta}\int_{-\infty}^\infty dy\exp(-y^2) = \sqrt{\dfrac{2\pi m}{\beta}}
+\end{equation}
+Subsittuting \eqref{eq:partition function momentum} and \eqref{eq:partition function position} into $Z$ gives our partition function,
+\begin{equation}
+\label{eq:partition function}
+Z = \dfrac{1}{\Omega}\dfrac{2\pi}{\beta}\sqrt{\dfrac{2\pi m}{\beta}} = \dfrac{2\pi\sqrt{m}}{\Omega\beta}
+\end{equation}
+This solves the probability density function,
+\begin{equation}
+\label{eq:probability density}
+\rho_\beta = \dfrac{\Omega\beta}{2\pi\sqrt{m}}\exp(-\beta p^2/2m)\exp(-\beta\Omega^2q^2/2).
+\end{equation}
+We find $\langle q\rangle$:
+\begin{align*}
+\langle q\rangle &= \dfrac{\Omega\beta}{2\pi\sqrt{m}}\int d\omega\exp(-\beta p^2/2m)q\exp(-\beta\Omega^2q^2/2)\\
+&= \dfrac{\Omega\beta}{2\pi\sqrt{m}}\int_{-\infty}^\infty dp[\exp(-\beta p^2/2m)]\int_{-\infty}^\infty dq[q\exp(-\beta\Omega^2q^2/2)],
+\end{align*}
+but $q\exp(-\beta\Omega^2q^2/2)$ is an odd, integrable function, so $\int_{-\infty}^\infty dq[q\exp(-\beta\Omega^2q^2/2)] = 0$, and $\langle q\rangle = 0$. Similarly, $\langle p\rangle = 0$.
+
+Next, we find $\langle\Omega^2q^2\rangle$:
+\begin{align*}
+\langle\Omega^2q^2\rangle &= \dfrac{\Omega\beta}{2\pi\sqrt{m}}\int d\omega\exp(-\beta p^2/2m)\Omega^2q^2\exp(-\beta\Omega^2q^2/2)\\
+&= \dfrac{\Omega\beta}{2\pi\sqrt{m}}\int_{-\infty}^\infty dp[\exp(-\beta p^2/2m)]\int_{-\infty}^\infty dq[\Omega^2q^2\exp(-\beta\Omega^2q^2/2)]\\
+&= \dfrac{\Omega\beta}{2\pi\sqrt{m}}\dfrac{\sqrt{2\pi m}}{\sqrt{\beta}}\int_{-\infty}^\infty dq[\Omega^2q^2\exp(-\beta\Omega^2q^2/2)].
+\end{align*}
+Let $x^2 = \beta\Omega^2q^2 / 2$, then $x = q\sqrt{\beta\Omega^2/2}$ and $dx = \sqrt{\beta\Omega^2/2}dq$, and
+\begin{equation*}
+\int_{-\infty}^\infty dq[\Omega^2q^2\exp(-\beta\Omega^2q^2/2)] = \dfrac{1}{\sqrt{\beta^3\Omega^2/2}}\int_{-\infty}^\infty dx[2x^2\exp(-x^2)] = \sqrt{\dfrac{\pi}{\beta^3\Omega^2/2}}.
+\end{equation*}
+Then,
+\begin{equation}
+\langle\Omega^2q^2\rangle = \dfrac{1}{\beta} = k_BT.
+\end{equation}
+By similar methods, we also find $\langle p^2/m\rangle = k_BT$.
+
+Finally, we find $\langle qp\rangle$:
+\begin{align*}
+\langle qp\rangle &= \dfrac{\Omega\beta}{2\pi\sqrt{m}}\int d\omega p\exp(-\beta p^2/2m)q\exp(-\beta\Omega^2q^2/2)\\
+&= \dfrac{\Omega\beta}{2\pi\sqrt{m}}\int_{-\infty}^\infty dp[p\exp(-\beta p^2/2m)]\int_{-\infty}^\infty dq[q\exp(-\beta\Omega^2q^2/2)].
+\end{align*}
+Since each integral equals zero by symmetry, $\langle qp\rangle = 0$.
+
+\begin{exercise}
+Explain the implications of reusing random numbers.
+\end{exercise}
+
+\end{document}  
