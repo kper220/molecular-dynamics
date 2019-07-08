@@ -152,6 +152,15 @@ The proof is straightforward. We find $\mathbb{E}(\mu_{n, 2}^2)$ as an example:
 \end{proof}
 
 \begin{exercise}
-Demonstrate equation (7.4).
+Let $H(q, p) = p^2/2 + q^2/2 + \epsilon q^4/4$. Find $\langle q^2\rangle$ and $\langle p^2\rangle$.
 \end{exercise}
+We find the partition function $Z$:
+\begin{equation*}
+Z = \int d\omega\exp(-\beta H) = \sqrt{\dfrac{2\pi}{\beta}}\int_{-\infty}^\infty dq\exp(-\beta(q^2/2 + \epsilon q^4/4)),
+\end{equation*}
+since $\int_{-\infty}^\infty dp\exp(-\beta p^2/2) = \sqrt{2\pi/\beta}$. However, solving
+\begin{equation*}
+\int_{-\infty}^\infty dq\exp(-\beta(q^2/2 + \epsilon q^4/4)
+\end{equation*}
+is problematic.
 \end{document}  
