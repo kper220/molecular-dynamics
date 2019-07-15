@@ -1,0 +1,57 @@
+\documentclass[reqno, 11pt]{amsart}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{bm}
+
+\usepackage{enumitem}
+\usepackage{epstopdf}
+\usepackage[margin = 1in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\usepackage{graphicx}
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+
+% COMMANDS
+\newtheorem{thm}{Theorem}
+\newtheorem{exercise}{Exercise}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Week 2}
+\author{David Li}
+%\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\begin{exercise}
+Derive the infinitesimal generator for the Ornstein-Uhlenbeck process,
+\begin{equation}
+\label{eq:ornstein uhlenbeck}
+d\bm{p} = -\gamma\bm{p}dt + \sqrt{2\gamma kT}\bm{M}^{1/2}d\bm{W}.
+\end{equation}
+\end{exercise}
+
+Let $\bm{a}(\bm{p}, t) = -\gamma\bm{p}$ and $\bm{b}(\bm{p}, t) = \sqrt{2\gamma kT}\bm{M}^{1/2}$. Then
+\begin{equation*}
+-\gamma\bm{p}dt + \sqrt{2\gamma kT}\bm{M}^{1/2}d\bm{W} = \bm{a}(\bm{p}, t) + \bm{b}(\bm{p}, t) = d\bm{p},
+\end{equation*}
+and the corresponding generator for the OU process is
+\begin{equation}
+\mathcal{L}\phi(\bm{p}) = \bigg(\bm{a}(\bm{p})\cdot\nabla + \dfrac{1}{2}\bm{b}^2(\bm{p})\nabla^2\bigg)\phi(\bm{p}) = (-\gamma\bm{p}\cdot\nabla + \gamma kT\mathrm{tr}(M)\nabla^2)\phi(\bm{p}).
+\end{equation}
+
+\begin{exercise}
+Derive the Fokker-Planck operator for the OU process.
+\end{exercise}
+
+Recall that the operator for a stochastic process is the Kolmogorov operator,
+\begin{equation}
+\mathcal{L}^\dagger\rho = -(a(x)\rho)_x + \dfrac{1}{2}(b^2(x)\rho)_{xx}.
+\end{equation}
+In the case of the OU process,
+\begin{equation}
+\mathcal{L}^\dagger\rho = \nabla(\gamma\bm{p})
+\end{equation}
+
+\end{document}

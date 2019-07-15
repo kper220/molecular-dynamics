@@ -16,7 +16,7 @@
 
 \DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
 
-\title{Exercises}
+\title{Week 1}
 \author{David Li}
 %\date{}                                           % Activate to display a given date or no date
 
@@ -130,7 +130,37 @@ Finally, we find $\langle qp\rangle$:
 Since each integral equals zero by symmetry, $\langle qp\rangle = 0$.
 
 \begin{exercise}
-Explain the implications of reusing random numbers.
+Show that the expectations of Equation (7.12) are $\langle q\rangle_h^{[\![ABO]\!]} = \langle p\rangle_h^{[\![ABO]\!]} = 0$.
 \end{exercise}
 
+Taking the expectations of (7.12), we have
+\begin{align*}
+\langle q\rangle &= \langle q\rangle + h\langle p\rangle/m\\
+\langle p\rangle &= -\Omega^2he^{-h\gamma}\langle q\rangle + (1 - \Omega^2h^2/m)e^{-h\gamma}\langle p\rangle.
+\end{align*}
+From the first equation, $\langle p\rangle = 0$. Substituting into the second equation gives $\langle q\rangle = 0$.
+
+\begin{exercise}
+Show from example (7.2) that $\mathbb{E}(\mu_{n, 1}q_n) = \mathbb{E}(\mu_{n, 2}q_n) = 0$, $\mathbb{E}(\mu_{n, 1}p_n) = \kappa_1\kappa_3$, $\mathbb{E}(\mu_{n, 1}\mu_{n, 2}) = \kappa_1\kappa_2$, and $\mathbb{E}(\mu_{n, 2}^2) = \kappa_2^2 + \kappa_3^2$.
+\end{exercise}
+
+\begin{proof}
+The proof is straightforward. We find $\mathbb{E}(\mu_{n, 2}^2)$ as an example:
+\begin{equation*}
+\mathbb{E}(\mu_{n, 2}^2) = \mathbb{E}((\kappa_2R_n + \kappa_3R_{n+1})^2) = \kappa_2^2 + \kappa_3^2.
+\end{equation*}
+\end{proof}
+
+\begin{exercise}
+Let $H(q, p) = p^2/2 + q^2/2 + \epsilon q^4/4$. Find $\langle q^2\rangle$ and $\langle p^2\rangle$.
+\end{exercise}
+We find the partition function $Z$:
+\begin{equation*}
+Z = \int d\omega\exp(-\beta H) = \sqrt{\dfrac{2\pi}{\beta}}\int_{-\infty}^\infty dq\exp(-\beta(q^2/2 + \epsilon q^4/4)),
+\end{equation*}
+since $\int_{-\infty}^\infty dp\exp(-\beta p^2/2) = \sqrt{2\pi/\beta}$. However, solving
+\begin{equation*}
+\int_{-\infty}^\infty dq\exp(-\beta(q^2/2 + \epsilon q^4/4)
+\end{equation*}
+is problematic.
 \end{document}  

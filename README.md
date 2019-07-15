@@ -10,6 +10,8 @@
 
 | Week | Summary |
 | -- | -- |
+| 7/15 - 7/21 | |
+| 7/8 - 7/14 | On break. |
 | 7/1 - 7/7 | Matthrews pg. 261 - 267 (Chapter 7).<br>Topology: introduction to topological spaces ([Chapter 1](http://mathonline.wikidot.com/topology)).<br>Real analysis: continuous functions, metric spaces.<br>Functional analysis: linear spaces, normed linear spaces.<br>Lab 5: integrators for SDEs (Euler-Maruyama). Random walk and Wiener process in multiple dimensions.<br>Differential equations: nondimensionalization. |
 | 6/24 - 6/30 | Matthews pg. 60 - 70 (Verlet method). Lab 4: Numerical integrators (Euler, RK4, Verlet). Equations of motion: modeling nondimensional-physical systems with gravitational and Lennard-Jones potential energies. |
 | 6/17 - 6/23 | Matthews pg. 211 - 258 (chapter 6 review).<br>Preview of Chapter 7. |
