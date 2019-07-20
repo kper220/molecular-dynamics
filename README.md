@@ -10,9 +10,9 @@
 
 | Week | Summary |
 | -- | -- |
-| 7/15 - 7/21 | |
+| 7/15 - 7/21 | Applications of rejection sampling and importance sampling, basic Monte Carlo estimation, Markov Chain Monte Carlo (MCMC), Langevin dynamics splitting methods. |
 | 7/8 - 7/14 | On break. |
-| 7/1 - 7/7 | Matthrews pg. 261 - 267 (Chapter 7).<br>Topology: introduction to topological spaces ([Chapter 1](http://mathonline.wikidot.com/topology)).<br>Real analysis: continuous functions, metric spaces.<br>Functional analysis: linear spaces, normed linear spaces.<br>Lab 5: integrators for SDEs (Euler-Maruyama). Random walk and Wiener process in multiple dimensions.<br>Differential equations: nondimensionalization. |
+| 7/1 - 7/7 | Topology: introduction to topological spaces ([Chapter 1](http://mathonline.wikidot.com/topology)).<br>Real analysis: continuous functions, metric spaces.<br>Functional analysis: linear spaces, normed linear spaces.<br>Lab 5: integrators for SDEs (Euler-Maruyama). Random walk and Wiener process in multiple dimensions.<br>Differential equations: nondimensionalization. |
 | 6/24 - 6/30 | Matthews pg. 60 - 70 (Verlet method). Lab 4: Numerical integrators (Euler, RK4, Verlet). Equations of motion: modeling nondimensional-physical systems with gravitational and Lennard-Jones potential energies. |
 | 6/17 - 6/23 | Matthews pg. 211 - 258 (chapter 6 review).<br>Preview of Chapter 7. |
 | 6/10 - 6/16 | Matthews pg. 216 - 258 (canonical distributions, stochastic differential equations), 407 - 411 (appendix: probability theory).<br>Acquired Mathematica programming tools for solving SDEs using the Ito Process, and computing the means and variances of stochastic processes. Ito process on sample SDE ([link](figures/ito-process-simulations.jpeg)). Understanding of stochastic differential equations ([link](documents/Understanding_SDEs.pdf)). |
