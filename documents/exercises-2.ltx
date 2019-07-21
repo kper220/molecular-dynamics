@@ -25,33 +25,21 @@
 \maketitle
 
 \begin{exercise}
-Derive the infinitesimal generator for the Ornstein-Uhlenbeck process,
+Consider the Langevin dynamics splitting parts in the harmonic potential case,
 \begin{equation}
-\label{eq:ornstein uhlenbeck}
-d\bm{p} = -\gamma\bm{p}dt + \sqrt{2\gamma kT}\bm{M}^{1/2}d\bm{W}.
+\begin{split}
+\mathcal{U}_h^A(\bm{q}, \bm{p}) &= (\bm{q} + h\bm{M}^{-1}\bm{p}, \bm{p}),\\
+\mathcal{U}_h^B(\bm{q}, \bm{p}) &= (\bm{q}, \bm{p} - h\bm{q}),\\
+\mathcal{U}_h^O(\bm{q}, \bm{p}) &= (\bm{q}, e^{-\gamma h}\bm{p} + \sqrt{kT(1 - e^{-2\gamma h})\bm{M}^{1/2}\bm{R}}).
+\end{split}
 \end{equation}
+Show that method $[\![OABA]\!]$ and $[\![BAOAB]\!]$ are conjugates.
 \end{exercise}
-
-Let $\bm{a}(\bm{p}, t) = -\gamma\bm{p}$ and $\bm{b}(\bm{p}, t) = \sqrt{2\gamma kT}\bm{M}^{1/2}$. Then
-\begin{equation*}
--\gamma\bm{p}dt + \sqrt{2\gamma kT}\bm{M}^{1/2}d\bm{W} = \bm{a}(\bm{p}, t) + \bm{b}(\bm{p}, t) = d\bm{p},
-\end{equation*}
-and the corresponding generator for the OU process is
-\begin{equation}
-\mathcal{L}\phi(\bm{p}) = \bigg(\bm{a}(\bm{p})\cdot\nabla + \dfrac{1}{2}\bm{b}^2(\bm{p})\nabla^2\bigg)\phi(\bm{p}) = (-\gamma\bm{p}\cdot\nabla + \gamma kT\mathrm{tr}(M)\nabla^2)\phi(\bm{p}).
-\end{equation}
-
-\begin{exercise}
-Derive the Fokker-Planck operator for the OU process.
-\end{exercise}
-
-Recall that the operator for a stochastic process is the Kolmogorov operator,
-\begin{equation}
-\mathcal{L}^\dagger\rho = -(a(x)\rho)_x + \dfrac{1}{2}(b^2(x)\rho)_{xx}.
-\end{equation}
-In the case of the OU process,
-\begin{equation}
-\mathcal{L}^\dagger\rho = \nabla(\gamma\bm{p})
-\end{equation}
+Without loss of generality, we prove that the algorithm works in one dimension. In the base case $n = 0$,
+\begin{align*}
+[\![OABA]\!] &= [\![OAB]\!](q + hp/2m, p)\\
+&= [\![OA]\!](q + hp/2m, p - h(q + hp/2m))\\
+&= [\![O]\!](q + hp/2m + h(p - h(q + hp/2m))/2m, p - h(q + hp/2m))
+\end{align*}
 
 \end{document}
