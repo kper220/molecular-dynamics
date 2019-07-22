@@ -10,6 +10,7 @@
 
 | Week | Summary |
 | -- | -- |
+| 7/22 - 7/28 | Estimators, mean error (bias), mean squared error (MSE), strong and weak convergence.<br>Show that schemes [ABAO] and [BAOAB] are conjugates. |
 | 7/15 - 7/21 | Applications of rejection sampling and importance sampling, basic Monte Carlo estimation, Markov Chain Monte Carlo (MCMC), Langevin dynamics with harmonic potential, splitting methods. |
 | 7/8 - 7/14 | On break. |
 | 7/1 - 7/7 | Topology: introduction to topological spaces ([Chapter 1](http://mathonline.wikidot.com/topology)).<br>Real analysis: continuous functions, metric spaces.<br>Functional analysis: linear spaces, normed linear spaces.<br>Lab 5: integrators for SDEs (Euler-Maruyama). Random walk and Wiener process in multiple dimensions.<br>Differential equations: nondimensionalization. |
