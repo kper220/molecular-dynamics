@@ -1,0 +1,49 @@
+\documentclass[reqno, 11pt]{amsart}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{bm}
+
+\usepackage{enumitem}
+\usepackage{epstopdf}
+\usepackage[margin = 1in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\usepackage{graphicx}
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+
+% COMMANDS
+\newtheorem{thm}{Theorem}
+\newtheorem{exercise}{Exercise}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Chapter 4}
+\author{David Li}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\noindent\textbf{Constraint equations}: Consider the (1-dimensional) constraint equation,
+\begin{equation}
+	g(q(t)) = 0.
+\end{equation}
+Taking a time derivative and substituting $\dot{q} = p/m$ yields
+\begin{equation*}
+	\dfrac{d}{dt}g(q(t)) = g'(q)p/m = 0,
+\end{equation*}
+this is the cotangency condition. Taking a second time derivative yields
+\begin{align*}
+	\dfrac{d}{dt}(g'(q)p/m) &= g''(q)\dot{q}p/m + g'(q)\dot{p}/m\\
+	&= g''(q)p^2/m^2 + g'(q)\dot{p}/m\\
+	&= 0.
+\end{align*}
+A generalization of this gives equation (4.10),
+\begin{equation}
+	\bm{g}'(\bm{q}(t))\bm{M}^{-1}\dot{\bm{p}}(t) + \bm{\phi} = \mathbf{0},
+\end{equation}
+where $\phi_k = \bm{p}^T\bm{M}^{-1}\nabla^2\bm{g}\bm{M}^{-1}\bm{p}$.
+\end{document}
