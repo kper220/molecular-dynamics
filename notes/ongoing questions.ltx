@@ -1,0 +1,56 @@
+\documentclass[reqno, 11pt]{amsart}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{bm}
+
+\usepackage{enumitem}
+\usepackage{epstopdf}
+\usepackage[margin = 1in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\usepackage{graphicx}
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+
+% COMMANDS
+\newtheorem{thm}{Theorem}
+\newtheorem{exercise}{Exercise}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{remark}
+\newtheorem*{interpretation}{Interpretation}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Ongoing questions}
+\author{David Li}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\section{Symplectic structure with holonomic constraints}
+\begin{enumerate}
+	\item Define a flow map $\mathcal{F}_t(\bm{z}) = \bm{Z}(t, \bm{z})$ for which $\bm{Z} = (Z_1, \cdots, Z_{2N_c})$ satisfies the symplectic condition
+	\begin{equation*}
+		d\bm{Z}\wedge\bm{J}d\bm{Z} = d\bm{z}\wedge\bm{J}d\bm{z},
+	\end{equation*}
+	where $\bm{J}$ is the symplectic structure matrix. Using product rule,
+	\begin{equation*}
+	\begin{split}
+		\dfrac{d}{dt}(d\bm{Z}\wedge\bm{J}d\bm{Z}) &= \dfrac{d}{dt}(d\bm{Z})\wedge\bm{J}d\bm{Z} + d\bm{Z}\wedge\dfrac{d}{dt}(\bm{J}d\bm{Z})\\
+		&= \dfrac{d}{dt}(d\bm{Z})\wedge\bm{J}d\bm{Z} + d\bm{Z}\wedge\bm{J}\dfrac{d}{dt}(d\bm{Z})\\
+		&= 0,
+	\end{split}
+	\end{equation*}
+	Since $\bm{z}$ does not depend on time. Assume that $\dfrac{d}{dt}(d\bm{Z}) = d\dot{\bm{Z}}$. Then
+	\begin{equation*}
+		\dfrac{d}{dt}(d\bm{Z}\wedge\bm{J}d\bm{Z}) = d\dot{\bm{Z}}\wedge\bm{J}d\bm{Z} + d\bm{Z}\wedge\bm{J}d\dot{\bm{Z}} = 0.
+	\end{equation*}
+	\begin{interpretation}
+		The vector $\bm{z}$ represents a preset configuration of entries $q_i$ and $p_i$, and is independent of time.
+	\end{interpretation}
+\end{enumerate}
+
+\end{document}
