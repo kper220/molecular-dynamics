@@ -1,0 +1,70 @@
+\documentclass[reqno, 11pt]{amsart}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{bm}
+
+\usepackage{enumitem}
+\usepackage{epstopdf}
+\usepackage[margin = 1in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\usepackage{graphicx}
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+
+% COMMANDS
+\newtheorem{thm}{Theorem}
+\newtheorem{exercise}{Exercise}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+\theoremstyle{remark}
+\newtheorem*{interpretation}{Interpretation}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{Chapter 7}
+\author{David Li}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\section{Constrained Langevin dynamics}
+Recall in the deterministic case, the constrained dynamics equations are
+\begin{align*}
+	d\bm{q} &= \bm{M}^{-1}\bm{p}dt,\\
+	d\bm{p} &= -\nabla U(\bm{q})dt - \bm{g}'(\bm{q})^T\bm{\lambda}dt,\\
+	\mathbf{0} &= \bm{g}(\bm{q}).
+\end{align*}
+Analogously, the constrained Langevin dynamics equations are
+\begin{align*}
+	d\bm{q} &= \bm{M}^{-1}\bm{p}dt,\\
+	d\bm{p} &= -\nabla U(\bm{q})dt - \gamma\bm{p}dt + \sqrt{2\gamma k_BT\bm{M}}d\mathbf{W} - \bm{g}'(\bm{q})^T\bm{\lambda}dt,\\
+	\mathbf{0} &= \bm{g}(\bm{q}).
+\end{align*}
+where the equations of constraint and hidden constraint are
+\begin{align*}
+	\bm{g}(\bm{q}) = \mathbf{0}, && \bm{g}'(\bm{q})\bm{M}^{-1}\bm{p} = 0.
+\end{align*}
+In the infinite time limit, solutions $\bm{q}$ and $\bm{p}$ sample $\tilde{\rho}_\beta$ ergodically, such that
+\begin{equation*}
+	\lim\limits_{T\to\infty}\dfrac{1}{T}\int_0^T\phi(\bm{q}(t), \bm{p}(t))dt = \int_\mathcal{D}\phi(\bm{q}, \bm{p})d\omega.
+\end{equation*}
+\begin{interpretation}
+The right-hand-side of the equation is, by definition, the expectation $\mathbb{E}\phi(\bm{q}, \bm{p})$, where $\bm{q},\bm{p}\sim\tilde{\rho}_\beta$. We can also approximate the left-hand-side by
+\begin{equation*}
+	\lim\limits_{T\to\infty}\dfrac{1}{T}\int_0^T\phi(\bm{q}(t), \bm{p}(t))dt \approx \dfrac{1}{N}\sum_{i = 0}^N\phi(\bm{q}(t_i), \bm{p}(t_i)).
+\end{equation*}
+As $N$ increases, the large time-limit components outweigh the initial condition components. Therefore, it is reasonable to believe that this integral samples the expectation $\mathbb{E}\phi(\bm{q}, \bm{p})$.
+\end{interpretation}
+$\tilde{\rho}_\beta$ is the normalized constrained canonical distribution,
+\begin{equation*}
+	\tilde{\rho}_\beta = Z^{-1}\exp(-\beta H(\bm{q}, \bm{p}))\delta[\bm{g}(\bm{q})]\delta[{\bm{g}'(\bm{q})\bm{M}^{-1}\bm{p}}],
+\end{equation*}
+where $\delta[\bm{z}] = \prod_i\delta[z_i]$.
+\begin{interpretation}
+The constraint factors are $\delta[\bm{g}(\bm{q})]\delta[\bm{g}'(\bm{q})\bm{M}^{-1}\bm{p}]$. For non-permissible points, these constraint factors equal zero, and they will not be sampled from the constrained distribution.
+\end{interpretation}
+
+\end{document}
