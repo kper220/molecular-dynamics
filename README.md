@@ -10,6 +10,7 @@
 
 | Week | Summary |
 | -- | -- |
+| 7/29 - 8/4 | Differential forms: 2-forms, exactness and conservation. |
 | 7/22 - 7/28 | Matthews pg. 98 - 106 (modified Hamiltonian, Lie derivatives and Poisson brackets), 139 - 144 (implicit schemes), 150 - 153, 281 - 282.<br>Differential forms: multivariable calculus review, wedge product.<br>Partial differential equations: introduction, heat equation, explicit scheme.<br>Estimators, mean error (bias), mean squared error (MSE), strong and weak convergence. |
 | 7/15 - 7/21 | Applications of rejection sampling and importance sampling, basic Monte Carlo estimation, Markov Chain Monte Carlo (MCMC), Langevin dynamics with harmonic potential, splitting methods. |
 | 7/8 - 7/14 | On break. |
