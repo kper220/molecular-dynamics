@@ -46,4 +46,21 @@ A generalization of this gives equation (4.10),
 	\bm{g}'(\bm{q}(t))\bm{M}^{-1}\dot{\bm{p}}(t) + \bm{\phi} = \mathbf{0},
 \end{equation}
 where $\phi_k = \bm{p}^T\bm{M}^{-1}\nabla^2\bm{g}\bm{M}^{-1}\bm{p}$.
+
+\noindent\textbf{Symplectic structure}: Let $\bm{Z} = (Z_1(t, \bm{z}), \cdots, Z_{2N_c}(t, \bm{z})) = (\bm{q}(t, \bm{z}), \bm{p}(t, \bm{z}))$, where
+\begin{equation*}
+	\begin{split}
+		\bm{q} &= (Z_1, \cdots, Z_{N_c})\\
+		\bm{p} &= (Z_{N_c+1}, \cdots, Z_{2N_c}).
+	\end{split}
+\end{equation*}
+Then, $d\bm{Z} =(d\bm{q}, d\bm{p})$ and $\bm{J}d\bm{Z} = (-d\bm{p}, d\bm{q})$, and
+\begin{equation*}
+	\begin{split}
+		d\bm{Z}\wedge\bm{J}d\bm{Z} &= (d\bm{Z})^T\bm{J}d\bm{Z} - (\bm{J}d\bm{Z})^Td\bm{Z}\\
+		&= (d\bm{q}, d\bm{p})^T(-d\bm{p}, d\bm{q}) - (-d\bm{p}, d\bm{q})^T(d\bm{q}, d\bm{p})\\
+		&= -d\bm{q}d\bm{p} - d\bm{p}d\bm{q} + d\bm{p}d\bm{q} - d\bm{q}d\bm{p}\\
+		&= -2d\bm{q}d\bm{p}
+	\end{split}
+\end{equation*}
 \end{document}
