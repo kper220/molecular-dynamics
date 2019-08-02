@@ -3,10 +3,11 @@
 > Repository for studying molecular dynamics.
 
 ## Table of Contents
-- [Tracker](#tracker)
+- [Progress](#progress)
 - [References](#references)
+    - [Other](#other)
 
-## Tracker
+## Progress
 
 | Week | Summary |
 | -- | -- |
@@ -23,7 +24,7 @@
 ## References
 - Leimkuhler and Matthews. *Molecular Dynamics with Deterministic and Stochastic Methods*.
 
-### Supplementary resources
+### Other
 
 - Variational Calculus
     - [Calculus of variations playlist by Khan](https://www.youtube.com/playlist?list=PLdgVBOaXkb9CD8igcUr9Fmn5WXLpE8ZE_)
