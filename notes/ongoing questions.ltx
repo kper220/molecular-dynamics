@@ -30,27 +30,68 @@
 \begin{document}
 \maketitle
 
-\section{Symplectic structure with holonomic constraints}
-\begin{enumerate}
-	\item Define a flow map $\mathcal{F}_t(\bm{z}) = \bm{Z}(t, \bm{z})$ for which $\bm{Z} = (Z_1, \cdots, Z_{2N_c})$ satisfies the symplectic condition
-	\begin{equation*}
-		d\bm{Z}\wedge\bm{J}d\bm{Z} = d\bm{z}\wedge\bm{J}d\bm{z},
-	\end{equation*}
-	where $\bm{J}$ is the symplectic structure matrix. Using product rule,
-	\begin{equation*}
-	\begin{split}
-		\dfrac{d}{dt}(d\bm{Z}\wedge\bm{J}d\bm{Z}) &= \dfrac{d}{dt}(d\bm{Z})\wedge\bm{J}d\bm{Z} + d\bm{Z}\wedge\dfrac{d}{dt}(\bm{J}d\bm{Z})\\
-		&= \dfrac{d}{dt}(d\bm{Z})\wedge\bm{J}d\bm{Z} + d\bm{Z}\wedge\bm{J}\dfrac{d}{dt}(d\bm{Z})\\
-		&= 0,
-	\end{split}
-	\end{equation*}
-	Since $\bm{z}$ does not depend on time. Assume that $\dfrac{d}{dt}(d\bm{Z}) = d\dot{\bm{Z}}$. Then
-	\begin{equation*}
-		\dfrac{d}{dt}(d\bm{Z}\wedge\bm{J}d\bm{Z}) = d\dot{\bm{Z}}\wedge\bm{J}d\bm{Z} + d\bm{Z}\wedge\bm{J}d\dot{\bm{Z}} = 0.
-	\end{equation*}
-	\begin{interpretation}
-		The vector $\bm{z}$ represents a preset configuration of entries $q_i$ and $p_i$, and is independent of time.
-	\end{interpretation}
-\end{enumerate}
+\section{Convergence practice}
+Let $\xi^k$ be sampled from a distribution with mean $0$ and variance $1$. Define the Wiener process at time $t$ as
+\begin{equation}
+	W(t) = \lim\limits_{n\to\infty}\dfrac{1}{\sqrt{n}}\sum_{1\leq k\leq\lfloor nt\rfloor}\xi^k.
+\end{equation}
+Consider two Wiener processes $W_1, W_2$ whose respective, random variables $\xi_1^k, \xi_2^k$ are sampled from two distributions with mean $0$ and variance $1$. Then, the mean error is
+\begin{align*}
+	\mathbb{E}\vert W_1(t) - W_2(t)\vert &= \dfrac{1}{\sqrt{n}}\cdot\mathbb{E}\bigg\vert\sum_{1\leq k\leq\lfloor nt\rfloor}(\xi_1^k - \xi_2^k)\bigg\vert\\
+	&= \dfrac{1}{\sqrt{n}}\cdot\int_\Omega\bigg\vert\sum_{1\leq k\leq\lfloor nt\rfloor}x(\rho_1(x) - \rho_2(x))\bigg\vert dx\\
+	&= \dfrac{1}{\sqrt{n}}\cdot\sum_{1\leq k\leq\lfloor nt\rfloor}\Big[\int_{\Omega_1}dx - \int_{\Omega_2}dx\Big][x(\rho_1(x) - \rho_2(x))]\\
+	&= \dfrac{\lfloor nt\rfloor}{\sqrt{n}}\Big[\int_{\Omega_1}dx - \int_{\Omega_2}dx\Big][x(\rho_1(x) - \rho_2(x))].
+\end{align*}
+where $\Omega_1 = \{x:x(\rho_1(x) - \rho_2(x))\geq0\}$ and $\Omega_2 = \Omega_1^c$. We see that two arbitrary processes do not necessarily converge strongly.
 
+Let $\xi_1$ sample from $-1$ and $1$ uniformly, while $\xi_2$ samples from a standard normal distribution, so that $\rho_2 = \psi$. To extend the support of $\xi_1$ onto the reals, we can use the pdf,
+\begin{equation}
+	\rho_1(x) = \dfrac{1}{2}(\delta(x + 1) + \delta(x - 1)).
+\end{equation}
+Suppose $x\leq 0$ and $x\neq-1$. Since $\rho_1(x) = 0$, then $x(\rho_1(x) - \psi(x))\geq0$. If $x = -1$, then $\rho_1(x) = \infty$ and $x(\rho_1(x) - \psi(x))\geq0$. Thus, $\Omega_1 = \{x:x\leq 0\}$. Likewise, $\Omega_2 = \{x:x > 0\}$. Therefore,
+\begin{align*}
+	\Big[\int_{\Omega_1}dx - \int_{\Omega_2}dx\Big][x(\rho_1(x) - \psi(x))] &= \Big[\int_{x\leq0}dx - \int_{x > 0}dx\Big][x(\rho_1(x) - \psi(x))]\\
+	&= \int_{x\leq0}x\rho_1(x)dx - \int_{x>0}x\rho_1(x)dx\\
+	&- \int_{x\leq0}x\psi(x)dx + \int_{x>0}x\psi(x)dx\\
+	&= -1 + 2\sqrt{\dfrac{2}{\pi}},
+\end{align*}
+so these two processes don't converge on the mean.
+
+%%%   
+\clearpage
+\section{What we know}
+Consider the stochastic process $X(t)$ which satisfies the following,
+\begin{equation}
+	X(t + dt) = \begin{cases}
+	X(t) + dW(t)&X(t) < b\\
+	a &X(t) = b.
+	\end{cases}
+\end{equation}
+where $a, b\in\mathbb{R}$ and $a < b$. The stochastic process $dW(t)$ is defined
+\begin{equation}
+	dW(t) = \xi(t)\sqrt{dt},
+\end{equation}
+where the differential $dW(t)$ satisfies the diffusion limit $dt = dx^2$, and $\xi\sim\mathcal{N}(0, 1)$ is our choice of random variable.
+
+Some ideas that could probably work.
+\begin{itemize}
+	\item If $X(t) = b$, then for all $\epsilon > 0$, there exists $\delta > 0$ such that $\vert X(t + \delta) - a\vert < \epsilon$. This describes how $X(t)$ ``jumps'' from $b$ to $a$.
+	\item (Adaptive timestep) If $X_n < b$ and $\xi_n\sim\mathcal{N}(0, 1)$, there exists a timestep $\delta t_n > 0$ such that $X_n + \xi_n\sqrt{\delta t_n}\leq b$. Specifically, let $\delta t_n = \bigg(\dfrac{b - X_n}{\xi_n}\bigg)^2$. This method says that if $X_n$ ``overshoots'' beyond $b$, then we have a way to temporarily reduce the timestep so that doesn't happen, while respecting the diffusion limit constraint. But the problem with this method is that it may introduce a downwards pressure on overall results. 
+	\item (Adaptive distribution) Suppose instead $\delta t_1 = \cdots = \delta t_n > 0$ is fixed. Then, the random variable $\xi_n$ must be sampled from the support
+	\begin{equation*}
+		-\infty < \xi_n\leq\dfrac{b - X_n}{\sqrt{\delta t_n}} = M_n,
+	\end{equation*}
+	where $M_n = (b - X_n)/\sqrt{\delta t_n}$. The corresponding density function is a truncated normal distribution,
+	\begin{equation*}
+		\psi_n(x) = \dfrac{1}{Z_n}\psi(x)[-\infty < x\leq M_n],
+	\end{equation*}
+	where $\psi$ is the pdf for the normal distribution, and
+	\begin{equation*}
+		Z_n = \int_{-\infty}^{M_n}\psi(x)dx
+	\end{equation*}
+	is the partition function. The problem with this method is that it unrealistically reduces the chances of $X_n$ evolving to $b$.
+\end{itemize}
+
+\section{Properties of this SDE}
+Ideally we would want to formalize the behavior of this SDE and its properties before comparing different methods' accuracies.
 \end{document}
