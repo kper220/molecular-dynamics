@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      6062,        171]
-NotebookOptionsPosition[      5176,        150]
-NotebookOutlinePosition[      5515,        165]
-CellTagsIndexPosition[      5472,        162]
+NotebookDataLength[      9753,        268]
+NotebookOptionsPosition[      8359,        240]
+NotebookOutlinePosition[      8698,        255]
+CellTagsIndexPosition[      8655,        252]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -30,7 +30,7 @@ Cell[BoxData[
  RowBox[{"ClearAll", "[", "\"\<Global`*\>\"", "]"}]], "Input",
  CellChangeTimes->{{3.7741801448784637`*^9, 3.774180149838881*^9}},
  CellLabel->
-  "In[382]:=",ExpressionUUID->"ebe7f42e-46f7-4b95-9ebd-a11728d1ce9e"],
+  "In[590]:=",ExpressionUUID->"ebe7f42e-46f7-4b95-9ebd-a11728d1ce9e"],
 
 Cell["First Euler-Maruyama method.", "Text",
  CellChangeTimes->{{3.774180176716445*^9, 
@@ -107,7 +107,7 @@ Cell[BoxData[
   3.774182987358818*^9, 3.774182991818606*^9}, {3.774183085413965*^9, 
   3.774183086312483*^9}},
  CellLabel->
-  "In[378]:=",ExpressionUUID->"e7a30c11-8025-4188-8581-c165413cf1ee"],
+  "In[398]:=",ExpressionUUID->"e7a30c11-8025-4188-8581-c165413cf1ee"],
 
 Cell["Sample ten trajectories from this method.", "Text",
  CellChangeTimes->{{3.774185347035205*^9, 3.774185361818581*^9}, {
@@ -127,25 +127,115 @@ Cell[BoxData[{
        RowBox[{"0", ",", "1", ",", "100"}], "]"}]}]}], "}"}]}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"solve", "=", 
+  RowBox[{"solveX", "=", 
    RowBox[{
     RowBox[{"eulerMaruyamaConstruct", "[", 
      RowBox[{"a", ",", "b", ",", "tt"}], "]"}], "[", 
     RowBox[{"[", "2", "]"}], "]"}]}], ";"}]}], "Input",
- CellChangeTimes->{{3.774185365580447*^9, 3.7741854585923986`*^9}},
+ CellChangeTimes->{{3.774185365580447*^9, 3.7741854585923986`*^9}, 
+   3.774186232126203*^9},
  CellLabel->
-  "In[379]:=",ExpressionUUID->"0213828b-906d-4d5e-addc-866e83d5a467"],
+  "In[399]:=",ExpressionUUID->"0213828b-906d-4d5e-addc-866e83d5a467"],
 
 Cell[BoxData[
  RowBox[{"ListLinePlot", "[", 
   RowBox[{
    RowBox[{
-    RowBox[{"solve", "[", "]"}], "&"}], "/@", 
+    RowBox[{"solveX", "[", "]"}], "&"}], "/@", 
    RowBox[{"Range", "[", "10", "]"}]}], "]"}]], "Input",
  CellChangeTimes->{{3.7741854005172987`*^9, 3.774185418375218*^9}, {
-  3.774185478969336*^9, 3.7741854811165733`*^9}},
+   3.774185478969336*^9, 3.7741854811165733`*^9}, 3.7741862426545877`*^9},
  CellLabel->
-  "In[381]:=",ExpressionUUID->"c8e9afe1-9895-4f2e-8337-7ed456dc1233"]
+  "In[401]:=",ExpressionUUID->"c8e9afe1-9895-4f2e-8337-7ed456dc1233"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Expectations", "Subsubsection",
+ CellChangeTimes->{{3.774186317998411*^9, 
+  3.77418631928765*^9}},ExpressionUUID->"84e8f426-e688-4112-b8e7-\
+4e53b0e82112"],
+
+Cell[TextData[{
+ "With a sample size of 10000 trajectories, compute the expectations of a \
+sample path from ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"t", "=", 
+    RowBox[{"0", "\[Rule]", "1"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "86259642-cca4-4dd9-ad60-5ca803a99735"],
+ " for interval size ",
+ Cell[BoxData[
+  FormBox["1000", TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "f1197e7b-9f48-473f-9eaa-9852e15aad5c"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.774186023589859*^9, 3.774186095111402*^9}, {
+  3.7741861369667664`*^9, 3.774186159844521*^9}, {3.774186312279048*^9, 
+  3.774186316383871*^9}, {3.774186514001292*^9, 3.7741865209951344`*^9}, {
+  3.774186734603598*^9, 
+  3.774186735548263*^9}},ExpressionUUID->"1bbbbfc0-1606-4e12-a8b8-\
+123e63343fc6"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"intervalSize", "=", 
+   RowBox[{"10", "^", "2"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"solveX", "=", 
+   RowBox[{
+    RowBox[{"eulerMaruyamaConstruct", "[", 
+     RowBox[{"a", ",", "b", ",", 
+      RowBox[{"N", "@", 
+       RowBox[{"Subdivide", "[", 
+        RowBox[{"0", ",", ".1", ",", "intervalSize"}], "]"}]}]}], "]"}], "[", 
+    
+    RowBox[{"[", "2", "]"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7741861665581827`*^9, 3.774186251605783*^9}, {
+   3.7741862988332*^9, 3.774186306121467*^9}, {3.774186499960639*^9, 
+   3.7741866232066317`*^9}, {3.774186670039783*^9, 3.774186721184022*^9}, {
+   3.7741867747489147`*^9, 3.7741867752649107`*^9}, 3.7741886163483057`*^9},
+ CellLabel->
+  "In[540]:=",ExpressionUUID->"53592f86-053b-4467-9134-44ca38e15081"],
+
+Cell["Calculate expectations per time input.", "Text",
+ CellChangeTimes->{{3.774186324241262*^9, 
+  3.774186370316535*^9}},ExpressionUUID->"2d26913d-9a8e-4b93-be26-\
+798e23a92b1e"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"solutions", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"solveX", "[", "]"}], "&"}], "/@", 
+    RowBox[{"Range", "[", 
+     RowBox[{"10", "^", "2"}], "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"expectation", "[", "i_", "]"}], ":=", 
+   RowBox[{"Mean", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"solutions", "[", 
+        RowBox[{"[", "#", "]"}], "]"}], "[", 
+       RowBox[{"[", "i", "]"}], "]"}], "&"}], "/@", 
+     RowBox[{"Range", "[", "10", "]"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"expectation", "[", "#", "]"}], "&"}], "/@", 
+   RowBox[{"Range", "[", "intervalSize", "]"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.774186373984846*^9, 3.7741864912652693`*^9}, {
+  3.774186722858027*^9, 3.774186723397283*^9}, {3.774186768881002*^9, 
+  3.774186769514475*^9}, {3.774188612980508*^9, 3.7741886135608053`*^9}, {
+  3.774188655987808*^9, 3.774188675634985*^9}},
+ CellLabel->
+  "In[587]:=",ExpressionUUID->"5bca3ec8-b853-4360-a019-a2ebbc3a1431"]
 }, Open  ]]
 },
 WindowSize->{Full, Full},
@@ -170,8 +260,15 @@ Cell[819, 28, 227, 4, 30, "Input",ExpressionUUID->"ebe7f42e-46f7-4b95-9ebd-a1172
 Cell[1049, 34, 172, 3, 35, "Text",ExpressionUUID->"75a2267b-364c-4635-94d8-fc69588438b1"],
 Cell[1224, 39, 2659, 70, 274, "Input",ExpressionUUID->"e7a30c11-8025-4188-8581-c165413cf1ee"],
 Cell[3886, 111, 233, 4, 35, "Text",ExpressionUUID->"39fda129-d3ef-4fbe-801f-4f3ed616e103"],
-Cell[4122, 117, 662, 19, 52, "Input",ExpressionUUID->"0213828b-906d-4d5e-addc-866e83d5a467"],
-Cell[4787, 138, 373, 9, 30, "Input",ExpressionUUID->"c8e9afe1-9895-4f2e-8337-7ed456dc1233"]
+Cell[4122, 117, 689, 20, 52, "Input",ExpressionUUID->"0213828b-906d-4d5e-addc-866e83d5a467"],
+Cell[4814, 139, 399, 9, 30, "Input",ExpressionUUID->"c8e9afe1-9895-4f2e-8337-7ed456dc1233"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5250, 153, 162, 3, 45, "Subsubsection",ExpressionUUID->"84e8f426-e688-4112-b8e7-4e53b0e82112"],
+Cell[5415, 158, 815, 21, 35, "Text",ExpressionUUID->"1bbbbfc0-1606-4e12-a8b8-123e63343fc6"],
+Cell[6233, 181, 818, 19, 52, "Input",ExpressionUUID->"53592f86-053b-4467-9134-44ca38e15081"],
+Cell[7054, 202, 180, 3, 35, "Text",ExpressionUUID->"2d26913d-9a8e-4b93-be26-798e23a92b1e"],
+Cell[7237, 207, 1106, 30, 73, "Input",ExpressionUUID->"5bca3ec8-b853-4360-a019-a2ebbc3a1431"]
 }, Open  ]]
 }
 ]
