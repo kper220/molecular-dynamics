@@ -1,0 +1,96 @@
+\documentclass[reqno, 11pt]{amsart}
+
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage{bm}
+
+\usepackage{enumitem}
+\usepackage{epstopdf}
+\usepackage[margin = 1in]{geometry}                % See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+\usepackage{graphicx}
+%\geometry{landscape}                % Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+
+% COMMANDS
+\newtheorem{thm}{Theorem}
+\newtheorem{corollary}{Corollary}[thm]
+\newtheorem{exercise}{Exercise}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{interpretation}{Interpretation}
+
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+
+\title{A particular stochastic differential equation}
+\author{David Li}
+\date{}                                           % Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+Consider the stochastic process,
+\begin{equation}
+	\label{eq:problem}
+	X(t + dt) = \begin{cases}
+		X(t) + dW(t)&(X(t) < \beta)\\
+		\alpha&(X(t) = \beta),
+	\end{cases}
+\end{equation}
+where $\alpha, \beta\in\mathbb{R}$ and $\alpha < \beta$, with initial conditions $X(0) = X_0$, and the stochastic process $dW(t)$ is defined
+\begin{equation}
+	\label{eq:wiener process}
+	dW(t) = \xi(t)\sqrt{dt},
+\end{equation}
+where $\xi(t)$ is sampled sampled from a normal distribution with mean $\mu = 0$ and variance $\sigma^2 = 1$. We hope to find discrete stochastic processes $X_n$ which converge strongly with \eqref{eq:problem}. A candidate SDE for equation \eqref{eq:problem} would be
+\begin{equation}
+	\label{eq:sde}
+	dX = -(\beta - \alpha)\delta[X(t) - \beta]dt + dW(t),
+\end{equation}
+where $\delta(x)$ is the Dirac delta function. Let us become familiar with the equation and demonstrate its close association to \eqref{eq:problem}. Suppose $X(\tau) = \beta$ and $t > 0$, then at the limit $t\to\tau$,
+\begin{align*}
+	X(\tau) + \lim\limits_{t\to\tau}\int_\tau^tdX &= \beta -(\beta - \alpha)\lim\limits_{t\to\tau}\int_\tau^t\delta(X(s) - \beta)ds + \lim\limits_{t\to\tau}W(t - \tau)\\
+	&= \alpha + \lim\limits_{t\to\tau}W(t - \tau)\\
+	&= \alpha,
+\end{align*}
+provided that $\beta\not\in\{X(s):\tau < s\leq t\}$\footnote{The justification only works for $t > \tau$. What about $t\leq\tau$? }. Recall the It\={o}-Doeblin formula,
+\begin{equation}
+	\label{eq:ito doeblin}
+	d\phi(X) = \phi'(X)(a(X, t)dt + b(X, t)dW) + \dfrac{1}{2}\phi''(X)b(X, t)^2dt,
+\end{equation}
+has a stochastic generator,
+\begin{equation*}
+	\mathcal{L}\phi(x) = \bigg(a(x)\dfrac{d}{dx} + \dfrac{1}{2}b^2(x)\dfrac{d^2}{dx^2}\bigg)\phi(x).
+\end{equation*}
+Therefore, the stochastic generator for \eqref{eq:sde} is
+\begin{equation}
+	\label{eq:generator}
+	\mathcal{L}\phi(x) = \bigg((\alpha - \beta)\delta(x - \beta)\dfrac{d}{dx} + \dfrac{1}{2}\dfrac{d^2}{dx^2}\bigg)\phi(x).
+\end{equation}
+Let $\phi(x) = x$, then the expectation
+\begin{align*}
+	\mathbb{E}[dX] &= \mathbb{E}[(\alpha - \beta)\delta(X - \beta)]dt\\
+	&= (\alpha - \beta)\int_{-\infty}^\beta\delta(X - \beta)dXdt\\
+	&= (\alpha - \beta)dt.
+\end{align*}
+Integrating $X$ with respect to $t$\footnote{This is probably illegal.} yields $\mathbb{E}[X(t)] = (\alpha - \beta)t$.
+
+\section{Euler Maruyama Methods}
+The Euler-Maruyama method is a first-order numerical approximation to most SDEs, but may not be completely accurate in this case. Nevertheless, it is useful in giving a rough intuition of what our process would look like, and expectations should also be reasonably close, too.
+
+Let $h > 0$ be our timestep of choice and $h\nu = t$. The first scheme is as follows,
+\begin{equation}
+	\label{eq:euler maruyama 1}
+	X_{k+1} = \begin{cases}
+	X_k + \xi_k\sqrt{h} &(X_k < \beta),\\
+	\alpha & (X_k\geq\beta),
+	\end{cases}
+\end{equation}
+where $\xi_k = \xi(kh)$. 
+
+\end{document}
