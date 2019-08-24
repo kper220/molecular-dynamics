@@ -1,6 +1,6 @@
 # Molecular Dynamics
 
-> Repository for studying molecular dynamics.
+> Numerical methods for solving stochastic differential equations.
 
 ## Table of Contents
 - [Progress](#progress)
